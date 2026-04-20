@@ -1,754 +1,1210 @@
-# UJIAN AKHIR SEMESTER
-## Python Dasar - Final Assessment
+# 🐍 Python Basics untuk Machine Learning
+### Seri Latihan — Gaya HackerRank
 
-**Instruktur:** Prof. Claude AI  
-**Tanggal Ujian:** Semester 1, 2024  
-**Durasi:** Unlimited  
-**Sifat Ujian:** Tertutup (No Copy-Paste)  
-**Metode Pengumpulan:** Buat file `.py` untuk setiap soal  
+> **Bahasa:** Python 3.10+
+> **Format:** Setiap soal memiliki spesifikasi input/output yang eksak, constraints, dan contoh test case.
+> **Aturan:** Implementasi murni Python — dilarang menggunakan `numpy`, `pandas`, `scikit-learn`, atau library eksternal apapun kecuali yang disebutkan secara eksplisit.
 
 ---
 
-## PERATURAN UJIAN
-
-1. **Tuliskan jawaban Anda dalam bentuk file Python (.py)** dengan nama sesuai soal
-2. **Kode harus dapat dijalankan tanpa error** dan memberikan output yang sesuai dengan requirement
-3. **Jangan gunakan library eksternal** kecuali yang sudah dipelajari di course (built-in Python saja)
-4. **Beri komentar pada kode Anda** untuk menjelaskan logic yang kompleks
-5. **Test kode Anda terlebih dahulu** sebelum dikumpulkan
-6. **Ketentuan Kelulusan:** Minimal 70/100 untuk lanjut ke course berikutnya
+## 🟢 EASY (5 Soal)
 
 ---
 
-## BAGIAN 1: SOAL MUDAH (5 Soal × 5 Poin = 25 Poin)
+### E-1 — Statistik Dasar Dataset
 
-### **Soal 1: Konversi Suhu**
-Buat program yang mengkonversi suhu dari Celsius ke Fahrenheit.
+**Deskripsi:**
+Dalam ML, langkah pertama exploratory data analysis (EDA) adalah menghitung statistik dasar dari sebuah dataset. Buat fungsi-fungsi berikut **tanpa menggunakan library apapun**.
 
-**Requirement:**
-- Terima input suhu dalam Celsius dari user
-- Rumus konversi: `F = (C × 9/5) + 32`
-- Tampilkan hasil dengan format: `"{celsius}°C sama dengan {fahrenheit}°F"`
-- Hasil harus menampilkan 2 angka desimal
+**Fungsi yang harus dibuat:**
 
-**Input Contoh:**
-```
-Masukkan suhu dalam Celsius: 25
-```
-
-**Output Contoh:**
-```
-25.0°C sama dengan 77.00°F
-```
-
-**File:** `soal_1_konversi_suhu.py`
-
----
-
-### **Soal 2: Validasi Bilangan Genap dan Ganjil**
-Buat program yang menerima 5 angka dari user dan tentukan mana yang genap dan ganjil.
-
-**Requirement:**
-- Minta user memasukkan 5 angka (satu per satu)
-- Tentukan setiap angka apakah GENAP atau GANJIL
-- Hitung berapa jumlah angka GENAP dan berapa GANJIL
-- Tampilkan hasil dalam format terstruktur
-
-**Input Contoh:**
-```
-Masukkan angka ke-1: 10
-Masukkan angka ke-2: 7
-Masukkan angka ke-3: 24
-Masukkan angka ke-4: 15
-Masukkan angka ke-5: 8
-```
-
-**Output Contoh:**
-```
-Hasil Analisis:
-10 adalah GENAP
-7 adalah GANJIL
-24 adalah GENAP
-15 adalah GANJIL
-8 adalah GENAP
-
-Total Genap: 3
-Total Ganjil: 2
-```
-
-**File:** `soal_2_genap_ganjil.py`
-
----
-
-### **Soal 3: Hitung Rata-Rata Nilai**
-Buat program untuk menghitung rata-rata nilai siswa dan menentukan grade.
-
-**Requirement:**
-- Terima input nama siswa dan 3 nilai ujian
-- Hitung rata-rata dari ketiga nilai tersebut
-- Tentukan grade berdasarkan kriteria:
-  - `>= 85`: Grade A
-  - `>= 75 dan < 85`: Grade B
-  - `>= 65 dan < 75`: Grade C
-  - `< 65`: Grade D
-- Tampilkan hasil dalam format yang jelas
-
-**Input Contoh:**
-```
-Nama Siswa: Budi
-Nilai Ujian 1: 85
-Nilai Ujian 2: 90
-Nilai Ujian 3: 88
-```
-
-**Output Contoh:**
-```
-=== HASIL UJIAN ===
-Nama: Budi
-Nilai Ujian 1: 85
-Nilai Ujian 2: 90
-Nilai Ujian 3: 88
-Rata-rata: 87.67
-Grade: A
-```
-
-**File:** `soal_3_hitung_grade.py`
-
----
-
-### **Soal 4: Manipulasi String Dasar**
-Buat program yang melakukan manipulasi string sebagai berikut.
-
-**Requirement:**
-- Terima input sebuah kalimat dari user
-- Hitung jumlah karakter (termasuk spasi)
-- Hitung jumlah kata
-- Tampilkan kalimat dengan format:
-  - UPPERCASE
-  - lowercase
-  - Title Case
-- Cari posisi kemunculan pertama kata "Python" (jika ada)
-
-**Input Contoh:**
-```
-Masukkan kalimat: Saya sedang belajar Python
-```
-
-**Output Contoh:**
-```
-Kalimat Original: Saya sedang belajar Python
-Jumlah Karakter: 25
-Jumlah Kata: 5
-UPPERCASE: SAYA SEDANG BELAJAR PYTHON
-lowercase: saya sedang belajar python
-Title Case: Saya Sedang Belajar Python
-Posisi "Python": Ditemukan di index 21
-```
-
-**File:** `soal_4_manipulasi_string.py`
-
----
-
-### **Soal 5: Operasi List Dasar**
-Buat program untuk memanipulasi list dengan operasi-operasi dasar.
-
-**Requirement:**
-- Buat list berisi 5 angka
-- Tampilkan list original
-- Tambahkan 3 angka baru di akhir menggunakan `append()`
-- Sisipkan 1 angka di posisi index 2
-- Hapus angka di posisi index 4
-- Tampilkan list final dan jumlah elemen dalam list
-
-**Input Contoh (Hard-coded dalam kode):**
 ```python
-numbers = [10, 20, 30, 40, 50]
+def mean(data: list[float]) -> float: ...
+def median(data: list[float]) -> float: ...
+def mode(data: list[float]) -> float: ...
+def variance(data: list[float]) -> float: ...
+def std_dev(data: list[float]) -> float: ...
+def data_range(data: list[float]) -> float: ...
 ```
 
-**Output Contoh:**
+**Spesifikasi:**
+- `mean`: rata-rata aritmatika
+- `median`: nilai tengah setelah diurutkan. Jika n genap, ambil rata-rata dua nilai tengah.
+- `mode`: nilai yang paling sering muncul. Jika ada tie, kembalikan nilai **terkecil**.
+- `variance`: variansi **populasi** → `sum((x - mean)²) / n`
+- `std_dev`: akar dari variance populasi
+- `data_range`: `max - min`
+
+Semua fungsi harus raise `ValueError("Data tidak boleh kosong")` jika input list kosong.
+
+**Format Input (stdin):**
 ```
-List Original: [10, 20, 30, 40, 50]
-
-Setelah menambah 60, 70, 80:
-[10, 20, 30, 40, 50, 60, 70, 80]
-
-Setelah insert 25 di index 2:
-[10, 20, 25, 30, 40, 50, 60, 70, 80]
-
-Setelah hapus index 4:
-[10, 20, 25, 30, 50, 60, 70, 80]
-
-Total elemen: 8
+Baris 1: angka-angka dipisah spasi
 ```
 
-**File:** `soal_5_operasi_list.py`
+**Format Output (stdout):**
+```
+Mean    : {nilai}
+Median  : {nilai}
+Mode    : {nilai}
+Variance: {nilai}
+Std Dev : {nilai}
+Range   : {nilai}
+```
+
+**Contoh Input:**
+```
+4 1 2 2 3 5
+```
+
+**Contoh Output:**
+```
+Mean    : 2.8333
+Median  : 2.5
+Mode    : 2
+Variance: 1.8056
+Std Dev : 1.3437
+Range   : 4
+```
+
+**Test Cases:**
+
+| Input | mean | median | mode | variance | std_dev | range |
+|-------|------|--------|------|----------|---------|-------|
+| `1 2 3 4 5` | `3.0` | `3.0` | `1` | `2.0` | `1.4142` | `4` |
+| `2 2 2 2` | `2.0` | `2.0` | `2` | `0.0` | `0.0` | `0` |
+| `1 1 2 2 3` | `1.8` | `2.0` | `1` | `0.56` | `0.7483` | `2` |
+
+**Constraints:**
+- Semua nilai input adalah bilangan bulat
+- `1 ≤ len(data) ≤ 10000`
+- Output float dibulatkan **4 desimal**. Jika nilai bulat, tampilkan tanpa desimal (contoh: `3.0` → `3.0`, bukan `3`)
 
 ---
 
-## BAGIAN 2: SOAL MEDIUM (5 Soal × 15 Poin = 75 Poin)
+### E-2 — Normalisasi dan Standarisasi
 
-### **Soal 6: Fungsi Faktorial dengan Validasi**
-Buat program dengan function untuk menghitung faktorial dengan validasi input.
+**Deskripsi:**
+Dua teknik scaling paling umum di ML adalah **Min-Max Normalization** dan **Z-Score Standardization**. Implementasikan keduanya sebagai fungsi.
 
-**Requirement:**
-- Buat function `hitung_faktorial(n)` yang menerima parameter angka
-- Validasi: n harus angka positif dan bilangan bulat
-- Jika validasi gagal, return -1 dan tampilkan pesan error
-- Hitung faktorial menggunakan loop
-- Di main program, minta input user dan tampilkan hasilnya
-- Hitung faktorial untuk 3 angka sekaligus
+**Fungsi yang harus dibuat:**
 
-**Input Contoh:**
-```
-Masukkan angka ke-1: 5
-Masukkan angka ke-2: 0
-Masukkan angka ke-3: 10
+```python
+def min_max_normalize(data: list[float]) -> list[float]: ...
+def z_score_standardize(data: list[float]) -> list[float]: ...
+def describe_scaling(data: list[float]) -> dict: ...
 ```
 
-**Output Contoh:**
+**Spesifikasi:**
+- `min_max_normalize`: kembalikan list baru di mana setiap nilai `x` diubah menjadi `(x - min) / (max - min)`. Raise `ValueError("Semua nilai sama, tidak bisa dinormalisasi")` jika `max == min`.
+- `z_score_standardize`: kembalikan list baru di mana setiap nilai `x` diubah menjadi `(x - mean) / std`. Raise `ValueError("Standar deviasi = 0, tidak bisa distandarisasi")` jika `std == 0`.
+- `describe_scaling`: kembalikan dict dengan key `"original_min"`, `"original_max"`, `"original_mean"`, `"original_std"`, `"normalized_min"`, `"normalized_max"`, `"standardized_mean"`, `"standardized_std"` — semua nilai float dibulatkan 4 desimal.
+
+**Format Input (stdin):**
 ```
-Faktorial dari 5 adalah: 120
-Faktorial dari 0 adalah: 1
-Faktorial dari 10 adalah: 3628800
-
-Total hitungan: 3 angka telah diproses
+Baris 1: angka-angka dipisah spasi
+Baris 2: nama operasi ("normalize", "standardize", atau "describe")
 ```
 
-**Catatan:**
-- `0! = 1` (konvensi matematika)
-- `5! = 5 × 4 × 3 × 2 × 1 = 120`
+**Format Output:**
+- Jika `normalize` atau `standardize`: cetak hasil list, setiap nilai dipisah spasi, dibulatkan 4 desimal
+- Jika `describe`: cetak setiap key-value satu per baris, format `key: value`
 
-**File:** `soal_6_faktorial.py`
+**Contoh Input:**
+```
+1 2 3 4 5
+normalize
+```
+
+**Contoh Output:**
+```
+0.0 0.25 0.5 0.75 1.0
+```
+
+**Test Cases:**
+
+| Input | Operasi | Output |
+|-------|---------|--------|
+| `0 5 10` | normalize | `0.0 0.5 1.0` |
+| `2 4 6` | standardize | `-1.2247 0.0 1.2247` |
+| `3 3 3` | normalize | `ValueError: Semua nilai sama, tidak bisa dinormalisasi` |
+| `3 3 3` | standardize | `ValueError: Standar deviasi = 0, tidak bisa distandarisasi` |
+
+**Constraints:**
+- `1 ≤ len(data) ≤ 10000`
+- Output float dibulatkan 4 desimal
 
 ---
 
-### **Soal 7: Dictionary untuk Data Karyawan**
-Buat program manajemen data karyawan menggunakan dictionary.
+### E-3 — Manipulasi Matrix dengan List of Lists
 
-**Requirement:**
-- Buat function `tambah_karyawan(nama, divisi, gaji)` yang menambah data ke dictionary
-- Buat function `tampilkan_semua_karyawan(data)` yang menampilkan semua data
-- Buat function `cari_karyawan(nama, data)` yang mencari data karyawan berdasarkan nama
-- Buat function `update_gaji(nama, gaji_baru, data)` yang mengupdate gaji
-- Buat function `hapus_karyawan(nama, data)` yang menghapus data karyawan
-- Main program: demonstrasikan semua function di atas dengan minimal 3 karyawan
+**Deskripsi:**
+Matrix adalah struktur data dasar dalam ML (bobot neural network, dataset, dll). Implementasikan operasi matrix dasar menggunakan list of lists **tanpa numpy**.
 
-**Output Contoh:**
-```
-=== SISTEM MANAJEMEN KARYAWAN ===
+**Fungsi yang harus dibuat:**
 
-Menambah data karyawan...
-✓ Budi (Divisi IT, Gaji: Rp 8.000.000) ditambahkan
-✓ Siti (Divisi HR, Gaji: Rp 6.500.000) ditambahkan
-✓ Ahmad (Divisi Sales, Gaji: Rp 7.000.000) ditambahkan
-
-=== SEMUA KARYAWAN ===
-1. Budi - IT - Rp 8.000.000
-2. Siti - HR - Rp 6.500.000
-3. Ahmad - Sales - Rp 7.000.000
-
-=== CARI KARYAWAN ===
-Cari: Budi
-Ditemukan! Budi bekerja di IT dengan gaji Rp 8.000.000
-
-=== UPDATE GAJI ===
-Update gaji Budi menjadi Rp 9.000.000
-✓ Gaji Budi berhasil diupdate
-
-=== HAPUS KARYAWAN ===
-Hapus Ahmad
-✓ Ahmad berhasil dihapus dari sistem
+```python
+def matrix_add(A: list[list[float]], B: list[list[float]]) -> list[list[float]]: ...
+def matrix_multiply(A: list[list[float]], B: list[list[float]]) -> list[list[float]]: ...
+def transpose(A: list[list[float]]) -> list[list[float]]: ...
+def matrix_scalar_multiply(A: list[list[float]], scalar: float) -> list[list[float]]: ...
 ```
 
-**File:** `soal_7_data_karyawan.py`
+**Spesifikasi:**
+- `matrix_add`: penjumlahan element-wise. Raise `ValueError("Ukuran matrix tidak sama")` jika dimensi berbeda.
+- `matrix_multiply`: perkalian matrix standar (dot product baris × kolom). Raise `ValueError("Dimensi tidak kompatibel untuk perkalian")` jika kolom A ≠ baris B.
+- `transpose`: balik baris dan kolom.
+- `matrix_scalar_multiply`: kalikan setiap elemen dengan scalar.
+
+**Format Input (stdin):**
+```
+Baris 1: operasi ("add", "multiply", "transpose", "scalar_mul")
+Baris 2: dimensi matrix A → "baris kolom"
+Baris 3...: isi matrix A, satu baris per baris matrix
+Baris selanjutnya: dimensi matrix B (jika dibutuhkan), isinya
+Baris terakhir: nilai scalar (hanya untuk scalar_mul)
+```
+
+**Contoh Input (multiply):**
+```
+multiply
+2 3
+1 2 3
+4 5 6
+3 2
+7 8
+9 10
+11 12
+```
+
+**Contoh Output:**
+```
+58 64
+139 154
+```
+
+**Contoh Input (transpose):**
+```
+transpose
+2 3
+1 2 3
+4 5 6
+```
+
+**Contoh Output:**
+```
+1 4
+2 5
+3 6
+```
+
+**Test Cases:**
+
+| Operasi | A | B/scalar | Output |
+|---------|---|----------|--------|
+| add | `[[1,2],[3,4]]` | `[[5,6],[7,8]]` | `[[6,8],[10,12]]` |
+| transpose | `[[1,2,3]]` | — | `[[1],[2],[3]]` |
+| scalar_mul | `[[1,2],[3,4]]` | `2` | `[[2,4],[6,8]]` |
+| multiply | `[[1,2]]` (1×2) | `[[1],[2]]` (2×1) | `[[5]]` |
+
+**Constraints:**
+- Nilai elemen matrix adalah integer
+- Dimensi matrix: baris dan kolom masing-masing antara 1 dan 50
+- Output: setiap baris matrix dicetak dalam satu baris, nilai dipisah spasi
 
 ---
 
-### **Soal 8: Loop Bersarang - Pola Bintang**
-Buat program yang menampilkan pola menggunakan nested loop.
+### E-4 — Fungsi Aktivasi Neural Network
 
-**Requirement:**
-- Minta input user untuk jumlah baris (n)
-- Buat pola bintang yang membentuk segitiga sama sisi
-- Setiap baris i menampilkan i bintang
-- Buat versi kedua: pola terbalik (segitiga terbalik)
-- Validasi input harus angka positif antara 1-10
+**Deskripsi:**
+Fungsi aktivasi adalah komponen penting dalam neural network. Implementasikan fungsi aktivasi yang paling umum digunakan.
 
-**Input Contoh:**
-```
-Masukkan jumlah baris: 5
-```
+**Fungsi yang harus dibuat:**
 
-**Output Contoh:**
-```
-=== POLA SEGITIGA ===
-*
-**
-***
-****
-*****
+```python
+import math
 
-=== POLA SEGITIGA TERBALIK ===
-*****
-****
-***
-**
-*
+def sigmoid(x: float) -> float: ...
+def relu(x: float) -> float: ...
+def tanh(x: float) -> float: ...
+def softmax(x: list[float]) -> list[float]: ...
+def leaky_relu(x: float, alpha: float = 0.01) -> float: ...
+
+def apply_activation(data: list[float], activation: str, **kwargs) -> list[float]: ...
 ```
 
-**File:** `soal_8_pola_bintang.py`
+**Spesifikasi:**
+- `sigmoid(x)`: `1 / (1 + e^(-x))`
+- `relu(x)`: `max(0, x)`
+- `tanh(x)`: `(e^x - e^(-x)) / (e^x + e^(-x))` — gunakan `math.tanh` diperbolehkan
+- `softmax(x)`: `e^(x_i) / sum(e^(x_j))` untuk setiap elemen. Untuk stabilitas numerik, kurangi setiap elemen dengan `max(x)` sebelum eksponen.
+- `leaky_relu(x, alpha)`: `x` jika `x > 0`, else `alpha * x`
+- `apply_activation(data, activation, **kwargs)`: terapkan fungsi aktivasi ke seluruh list. `activation` bisa `"sigmoid"`, `"relu"`, `"tanh"`, `"leaky_relu"`. Raise `ValueError("Aktivasi '{activation}' tidak dikenal")` jika tidak valid. Untuk `softmax`, gunakan langsung fungsi `softmax(data)`.
+
+**Format Input (stdin):**
+```
+Baris 1: nama aktivasi
+Baris 2: angka-angka dipisah spasi
+Baris 3 (opsional): nilai alpha (hanya untuk leaky_relu)
+```
+
+**Contoh Input:**
+```
+sigmoid
+0 1 -1 2
+```
+
+**Contoh Output:**
+```
+0.5 0.7311 0.2689 0.8808
+```
+
+**Test Cases:**
+
+| Aktivasi | Input | Output |
+|----------|-------|--------|
+| relu | `-2 -1 0 1 2` | `0 0 0 1 2` |
+| softmax | `1 2 3` | `0.0900 0.2447 0.6652` |
+| leaky_relu (alpha=0.01) | `-10 0 10` | `-0.1 0.0 10.0` |
+| tanh | `0` | `0.0` |
+| unknown | `1 2` | `ValueError: Aktivasi 'unknown' tidak dikenal` |
+
+**Constraints:**
+- `x` bisa berupa angka float atau integer apapun
+- Output float dibulatkan 4 desimal
+- `softmax`: jumlah output harus = 1.0 (dalam toleransi floating point)
+- `alpha` pada leaky_relu selalu > 0
 
 ---
 
-### **Soal 9: List Comprehension dan Filter**
-Buat program untuk mengolah list menggunakan berbagai teknik.
+### E-5 — Encoding Fitur Kategorikal
 
-**Requirement:**
-- Buat list berisi 15 angka random (1-100)
-- Tampilkan list original
-- Filter hanya angka yang > 50 menggunakan list comprehension
-- Filter hanya angka genap menggunakan loop
-- Hitung berapa jumlah angka yang habis dibagi 3
-- Tampilkan statistik: angka terbesar, terkecil, dan rata-rata
-- Urutkan list dari terkecil ke terbesar
+**Deskripsi:**
+Sebelum memasukkan data kategorikal ke model ML, data harus diubah ke format numerik. Implementasikan dua teknik encoding yang paling umum.
 
-**Output Contoh:**
-```
-List Original: [45, 78, 23, 92, 56, 34, 89, 12, 67, 88, 41, 95, 27, 73, 18]
+**Fungsi yang harus dibuat:**
 
-Angka > 50: [78, 92, 56, 89, 67, 88, 95, 73]
-
-Angka Genap: [78, 92, 56, 34, 12, 88, 28, 18]
-
-Jumlah angka habis dibagi 3: 4
-
-Statistik:
-- Angka Terbesar: 95
-- Angka Terkecil: 12
-- Rata-rata: 57.27
-
-List Terurut: [12, 18, 23, 27, 34, 41, 45, 56, 67, 73, 78, 88, 89, 92, 95]
+```python
+def label_encode(data: list[str]) -> tuple[list[int], dict]: ...
+def one_hot_encode(data: list[str]) -> tuple[list[list[int]], list[str]]: ...
+def decode_label(encoded: list[int], mapping: dict) -> list[str]: ...
 ```
 
-**File:** `soal_9_list_comprehension.py`
+**Spesifikasi:**
+- `label_encode(data)`: ubah setiap label unik ke integer mulai dari 0, diurutkan **alphabetically**. Kembalikan `(encoded_list, mapping_dict)` di mana `mapping_dict` seperti `{"cat": 0, "dog": 1}`.
+- `one_hot_encode(data)`: kembalikan `(matrix, categories)` di mana `matrix` adalah list of lists berisi 0/1, dan `categories` adalah list label unik yang sudah diurutkan alphabetically. Setiap baris mewakili satu sampel.
+- `decode_label(encoded, mapping)`: kembalikan label asli dari list integer dan mapping. Raise `ValueError("Index {i} tidak ada di mapping")` jika ada integer yang tidak valid.
+
+**Format Input (stdin):**
+```
+Baris 1: label-label dipisah spasi
+Baris 2: operasi ("label", "onehot")
+```
+
+**Format Output:**
+- `label`: cetak encoded list dipisah spasi, lalu mapping (satu per baris, format `label: index`)
+- `onehot`: cetak header kategori (dipisah spasi), lalu setiap baris matrix
+
+**Contoh Input:**
+```
+cat dog bird cat dog
+label
+```
+
+**Contoh Output:**
+```
+1 2 0 1 2
+bird: 0
+cat: 1
+dog: 2
+```
+
+**Contoh Input:**
+```
+cat dog bird
+onehot
+```
+
+**Contoh Output:**
+```
+bird cat dog
+0 1 0
+0 0 1
+1 0 0
+```
+
+**Test Cases:**
+
+| Input | Operasi | encoded | categories |
+|-------|---------|---------|------------|
+| `yes no yes` | label | `1 0 1` | `no: 0, yes: 1` |
+| `a b c` | onehot | matrix 3×3 identity | `a b c` |
+| `x x x` | label | `0 0 0` | `x: 0` |
+
+**Constraints:**
+- Label hanya mengandung huruf kecil
+- `1 ≤ len(data) ≤ 1000`
+- Jumlah kategori unik: 2 sampai 20
 
 ---
 
-### **Soal 10: Try-Except untuk Input User**
-Buat program untuk menangani berbagai jenis error dengan try-except.
-
-**Requirement:**
-- Minta user memasukkan 2 angka (dengan konversi int)
-- Minta user memilih operasi: + (tambah), - (kurang), * (kali), / (bagi)
-- Tangani error:
-  - `ValueError`: jika input bukan angka
-  - `ZeroDivisionError`: jika pembagian dengan 0
-  - Operasi tidak valid: tampilkan pesan error custom
-- Gunakan try-except-else-finally
-- Tampilkan hasil jika berhasil
-
-**Input Contoh:**
-```
-Masukkan angka 1: 10
-Masukkan angka 2: 0
-Pilih operasi (+, -, *, /): /
-```
-
-**Output Contoh (Scenario 1 - Success):**
-```
-10 + 5 = 15
---- Operasi selesai dengan sukses ---
-```
-
-**Output Contoh (Scenario 2 - Error):**
-```
-ERROR: Pembagian dengan 0 tidak diperbolehkan!
---- Operasi selesai ---
-```
-
-**File:** `soal_10_error_handling.py`
+## 🟡 MEDIUM (5 Soal)
 
 ---
 
-## BAGIAN 3: SOAL SULIT (5 Soal × 15 Poin = 75 Poin)
+### M-1 — Implementasi K-Fold Cross Validation
 
-### **Soal 11: Permainan Tebak Angka (Guessing Game)**
-Buat permainan tebak angka dengan fitur-fitur advanced.
+**Deskripsi:**
+Cross-validation adalah teknik untuk mengevaluasi model secara robust. Implementasikan K-Fold Cross Validation dari nol.
 
-**Requirement:**
-- Program membuat angka random antara 1-100
-- User bisa menebak sampai 10 kali
-- Setiap kali menebak, berikan hint:
-  - Jika tebakan < angka: "Terlalu kecil!"
-  - Jika tebakan > angka: "Terlalu besar!"
-  - Jika tebakan == angka: "BENAR!"
-- Hitung skor berdasarkan jumlah tebakan:
-  - 1-3 tebakan: Skor 100
-  - 4-6 tebakan: Skor 75
-  - 7-10 tebakan: Skor 50
-  - Lebih dari 10: Skor 0
-- Tampilkan history semua tebakan user
-- Tanyakan apakah user ingin bermain lagi
-- Hitung statistik total permainan
+**Fungsi yang harus dibuat:**
 
-**Output Contoh:**
-```
-=== PERMAINAN TEBAK ANGKA ===
-Saya sudah memikirkan sebuah angka antara 1-100.
-Anda punya 10 kesempatan untuk menebaknya!
-
-Tebakan ke-1: 50
-Terlalu besar!
-
-Tebakan ke-2: 25
-Terlalu kecil!
-
-Tebakan ke-3: 37
-Terlalu kecil!
-
-Tebakan ke-4: 43
-BENAR! Angka yang saya pikir adalah 43
-
-History Tebakan: [50, 25, 37, 43]
-Jumlah Tebakan: 4
-Skor Anda: 75
-
-Mainkan lagi? (y/n): n
---- Game Over ---
+```python
+def k_fold_split(n: int, k: int) -> list[tuple[list[int], list[int]]]: ...
+def cross_val_accuracy(
+    X: list[list[float]],
+    y: list[int],
+    k: int,
+    predictor_fn  # callable: fit_predict(X_train, y_train, X_val) -> list[int]
+) -> dict: ...
 ```
 
-**File:** `soal_11_tebak_angka.py`
+**Spesifikasi:**
+
+`k_fold_split(n, k)`:
+- Bagi index `0` sampai `n-1` menjadi `k` fold secara **sequential** (berurutan, tidak shuffle)
+- Kembalikan list of `k` tuple: `(train_indices, val_indices)`
+- Fold ke-i: `val = index [i*fold_size : (i+1)*fold_size]`, `train = sisanya`
+- Jika `n` tidak habis dibagi `k`, `k-1` fold pertama berukuran `floor(n/k)` dan fold terakhir mendapat sisa
+- Raise `ValueError("k harus antara 2 dan n")` jika `k < 2` atau `k > n`
+
+`cross_val_accuracy(X, y, k, predictor_fn)`:
+- Jalankan k_fold_split lalu untuk setiap fold:
+  - Buat `X_train, y_train, X_val, y_val` dari indices
+  - Panggil `predictor_fn(X_train, y_train, X_val)` → `y_pred`
+  - Hitung akurasi fold: `sum(pred == true) / len(val)`
+- Kembalikan dict: `{"scores": [f1, f2, ...], "mean": float, "std": float, "min": float, "max": float}` — semua float dibulatkan 4 desimal
+
+**Format Input (stdin):**
+```
+Baris 1: n k
+```
+
+**Format Output untuk `k_fold_split`:**
+```
+Fold 1: train=[...] val=[...]
+Fold 2: train=[...] val=[...]
+...
+```
+
+**Contoh Input:**
+```
+10 3
+```
+
+**Contoh Output:**
+```
+Fold 1: train=[3, 4, 5, 6, 7, 8, 9] val=[0, 1, 2]
+Fold 2: train=[0, 1, 2, 6, 7, 8, 9] val=[3, 4, 5]
+Fold 3: train=[0, 1, 2, 3, 4, 5] val=[6, 7, 8, 9]
+```
+
+**Test Cases:**
+
+| n | k | ukuran setiap val fold |
+|---|---|----------------------|
+| 10 | 5 | `[2,2,2,2,2]` |
+| 9 | 4 | `[2,2,2,3]` |
+| 6 | 2 | `[3,3]` |
+| 5 | 6 | `ValueError: k harus antara 2 dan n` |
+
+**Constraints:**
+- `2 ≤ k ≤ n`
+- Setiap index hanya muncul **tepat satu kali** di val set seluruh fold
+- Gabungan semua val indices = `list(range(n))`
 
 ---
 
-### **Soal 12: Tuple dan Dictionary - Database Mahasiswa**
-Buat sistem database mahasiswa dengan tuple dan dictionary.
+### M-2 — Kalkulasi Loss Functions
 
-**Requirement:**
-- Gunakan tuple untuk menyimpan data mahasiswa (nim, nama, semester, gpa)
-- Gunakan dictionary untuk koleksi mahasiswa dengan NIM sebagai key
-- Buat function:
-  - `tambah_mahasiswa(nim, nama, semester, gpa, db)`: Tambah data
-  - `tampilkan_mahasiswa(nim, db)`: Tampilkan 1 mahasiswa
-  - `update_gpa(nim, gpa_baru, db)`: Update GPA mahasiswa
-  - `hapus_mahasiswa(nim, db)`: Hapus mahasiswa
-  - `cari_mahasiswa_gpa_min(min_gpa, db)`: Cari mahasiswa dengan GPA >= min_gpa
-  - `statistik_gpa(db)`: Hitung rata-rata GPA, GPA tertinggi, terendah
-- Main program: demonstrasikan dengan minimal 5 mahasiswa
-- Gunakan try-except untuk validasi data
+**Deskripsi:**
+Loss function mengukur seberapa jauh prediksi model dari nilai aktual. Implementasikan loss functions yang paling umum digunakan.
 
-**Output Contoh:**
-```
-=== DATABASE MAHASISWA ===
+**Fungsi yang harus dibuat:**
 
-Menambah mahasiswa...
-✓ 001 - Andi (Semester 3, GPA 3.75) ditambahkan
-✓ 002 - Bella (Semester 2, GPA 3.50) ditambahkan
-✓ 003 - Citra (Semester 4, GPA 3.90) ditambahkan
-✓ 004 - Doni (Semester 1, GPA 3.25) ditambahkan
-✓ 005 - Eka (Semester 3, GPA 3.80) ditambahkan
-
-=== DATA MAHASISWA ===
-NIM: 001 | Nama: Andi | Semester: 3 | GPA: 3.75
-NIM: 002 | Nama: Bella | Semester: 2 | GPA: 3.50
-NIM: 003 | Nama: Citra | Semester: 4 | GPA: 3.90
-NIM: 004 | Nama: Doni | Semester: 1 | GPA: 3.25
-NIM: 005 | Nama: Eka | Semester: 3 | GPA: 3.80
-
-=== STATISTIK GPA ===
-Rata-rata GPA: 3.64
-GPA Tertinggi: 3.90 (Citra)
-GPA Terendah: 3.25 (Doni)
-
-=== MAHASISWA DENGAN GPA >= 3.70 ===
-001 - Andi: 3.75
-003 - Citra: 3.90
-005 - Eka: 3.80
-
-=== UPDATE GPA ===
-NIM 002 - GPA diupdate dari 3.50 menjadi 3.65
-✓ GPA Bella berhasil diupdate
+```python
+def mse(y_true: list[float], y_pred: list[float]) -> float: ...
+def rmse(y_true: list[float], y_pred: list[float]) -> float: ...
+def mae(y_true: list[float], y_pred: list[float]) -> float: ...
+def r2_score(y_true: list[float], y_pred: list[float]) -> float: ...
+def binary_cross_entropy(y_true: list[int], y_pred: list[float]) -> float: ...
+def categorical_cross_entropy(y_true: list[list[int]], y_pred: list[list[float]]) -> float: ...
 ```
 
-**File:** `soal_12_database_mahasiswa.py`
+**Spesifikasi:**
+- `mse`: `sum((y_true - y_pred)²) / n`
+- `rmse`: `sqrt(mse)`
+- `mae`: `sum(|y_true - y_pred|) / n`
+- `r2_score`: `1 - SS_res/SS_tot` di mana `SS_res = sum((y_true - y_pred)²)`, `SS_tot = sum((y_true - mean(y_true))²)`
+- `binary_cross_entropy`: `- sum(y * log(p) + (1-y) * log(1-p)) / n`. Gunakan clipping: `p = max(min(p, 1-1e-15), 1e-15)` untuk menghindari `log(0)`.
+- `categorical_cross_entropy`: `- sum(sum(y_ij * log(p_ij))) / n`. Gunakan clipping yang sama. `y_true` adalah one-hot encoded.
+
+Semua fungsi raise `ValueError("Panjang y_true dan y_pred harus sama")` jika panjang berbeda.
+
+**Format Input (stdin):**
+```
+Baris 1: nama loss function
+Baris 2: y_true dipisah spasi
+Baris 3: y_pred dipisah spasi
+```
+
+**Contoh Input:**
+```
+mse
+1 2 3 4 5
+1.1 1.9 3.2 3.8 5.1
+```
+
+**Contoh Output:**
+```
+0.0220
+```
+
+**Test Cases:**
+
+| Loss | y_true | y_pred | Output |
+|------|--------|--------|--------|
+| mse | `[1,2,3]` | `[1,2,3]` | `0.0` |
+| mae | `[0,1,2]` | `[1,2,3]` | `1.0` |
+| r2_score | `[1,2,3,4,5]` | `[1,2,3,4,5]` | `1.0` |
+| r2_score | `[1,2,3]` | `[2,2,2]` | `0.0` |
+| binary_cross_entropy | `[1,0,1]` | `[0.9,0.1,0.8]` | `0.1643` |
+
+**Constraints:**
+- `y_pred` untuk binary/categorical CE selalu dalam rentang `(0, 1)`
+- `y_true` untuk binary CE hanya berisi 0 atau 1
+- Output dibulatkan 4 desimal
+- `r2_score` bisa bernilai negatif (jika prediksi lebih buruk dari baseline mean)
 
 ---
 
-### **Soal 13: File I/O - Baca dan Proses Data CSV**
-Buat program untuk membaca dan memproses file data CSV.
+### M-3 — String Processing untuk NLP Dasar
 
-**Requirement:**
-- Buat file `data_penjualan.csv` dengan struktur:
+**Deskripsi:**
+Sebelum text bisa diproses model ML, teks harus melalui tahap preprocessing. Implementasikan pipeline preprocessing teks dasar.
+
+**Fungsi yang harus dibuat:**
+
+```python
+def clean_text(text: str) -> str: ...
+def tokenize(text: str) -> list[str]: ...
+def remove_stopwords(tokens: list[str], stopwords: list[str]) -> list[str]: ...
+def build_vocabulary(corpus: list[str]) -> dict: ...
+def bag_of_words(text: str, vocabulary: dict) -> list[int]: ...
+def tf_idf_score(term: str, document: str, corpus: list[str]) -> float: ...
+```
+
+**Spesifikasi:**
+- `clean_text(text)`: ubah ke lowercase, hapus semua karakter selain huruf, angka, dan spasi. Hapus spasi berlebih (multiple spaces → single space). Strip spasi di awal/akhir.
+- `tokenize(text)`: panggil `clean_text` lalu split berdasarkan spasi. Kembalikan list token.
+- `remove_stopwords(tokens, stopwords)`: hapus token yang ada di `stopwords` (case-insensitive).
+- `build_vocabulary(corpus)`: terima list dokumen (string), kembalikan dict `{word: index}` di mana setiap kata unik diberi index mulai dari 0, **diurutkan alphabetically**.
+- `bag_of_words(text, vocabulary)`: kembalikan list integer sepanjang `len(vocabulary)`, setiap posisi = jumlah kemunculan kata tersebut di `text`.
+- `tf_idf_score(term, document, corpus)`:
+  - TF = `count(term in document) / total_words_in_document`
+  - IDF = `log(total_documents / (1 + documents_containing_term))` (gunakan `math.log`)
+  - Return `TF * IDF`, dibulatkan 4 desimal
+
+**Format Input (stdin):**
+```
+Baris 1: operasi
+Baris 2+: data sesuai operasi
+```
+
+**Contoh Input (bag_of_words):**
+```
+bow
+the cat sat
+the cat sat on the mat
+```
+*(baris 2: teks input, baris 3: seluruh corpus untuk build vocabulary)*
+
+**Contoh Output:**
+```
+0 0 1 1 0 1 2
+```
+*(vocabulary: cat=0, mat=1, on=2, sat=3, the=4 → tapi output sesuai index alphabetical)*
+
+**Test Cases:**
+
+| Fungsi | Input | Output |
+|--------|-------|--------|
+| clean_text | `"Hello, World!! 123"` | `"hello world 123"` |
+| tokenize | `"The CAT sat."` | `["the", "cat", "sat"]` |
+| remove_stopwords | `["the","cat","sat"]`, sw=`["the"]` | `["cat","sat"]` |
+| build_vocabulary | `["cat sat", "cat ran"]` | `{"cat":0,"ran":1,"sat":2}` |
+| tf_idf (term="cat", doc="cat sat", corpus=["cat sat","dog ran"]) | — | `0.0` (karena log(2/(1+2)) < 0 jika semua dok mengandung "cat") |
+
+**Constraints:**
+- Teks input hanya mengandung ASCII
+- `corpus` untuk `build_vocabulary` minimal 1 dokumen
+- Stopwords sudah dalam huruf kecil
+
+---
+
+### M-4 — Implementasi Gradient Descent 1D
+
+**Deskripsi:**
+Gradient descent adalah algoritma optimasi inti di balik pelatihan model ML. Implementasikan gradient descent untuk meminimalkan fungsi sederhana.
+
+**Fungsi yang harus dibuat:**
+
+```python
+def gradient_descent(
+    func,           # callable: f(x) -> float
+    grad_func,      # callable: f'(x) -> float
+    x_init: float,
+    learning_rate: float,
+    epochs: int,
+    tolerance: float = 1e-6
+) -> dict: ...
+
+def numerical_gradient(func, x: float, h: float = 1e-5) -> float: ...
+```
+
+**Spesifikasi:**
+
+`gradient_descent`:
+- Mulai dari `x = x_init`
+- Setiap epoch: `x = x - learning_rate * grad_func(x)`
+- Berhenti lebih awal jika `|x_baru - x_lama| < tolerance`
+- Kembalikan dict: `{"x_optimal": float, "f_optimal": float, "epochs_run": int, "converged": bool, "history": list[float]}` di mana `history` adalah list nilai `x` setiap epoch (panjang = `epochs_run`)
+- Raise `ValueError("learning_rate harus positif")` jika `learning_rate <= 0`
+- Raise `ValueError("epochs harus positif")` jika `epochs < 1`
+
+`numerical_gradient(func, x, h)`:
+- Hitung gradient secara numerik: `(f(x + h) - f(x - h)) / (2 * h)`
+
+**Format Input (stdin):**
+```
+Baris 1: nama fungsi preset ("quadratic", "cubic", "absolute")
+Baris 2: x_init learning_rate epochs
+```
+
+Fungsi preset yang harus didefinisikan di dalam program:
+- `"quadratic"`: `f(x) = x²`, `f'(x) = 2x` → minimum di `x=0`
+- `"cubic"`: `f(x) = x³ - 3x`, `f'(x) = 3x² - 3` → minimum lokal di `x=1`
+- `"absolute"`: `f(x) = |x|`, gradient = `numerical_gradient`
+
+**Contoh Input:**
+```
+quadratic
+2.0 0.1 100
+```
+
+**Contoh Output:**
+```
+x_optimal : 0.0000
+f_optimal : 0.0000
+epochs_run: 87
+converged : True
+```
+
+**Test Cases:**
+
+| Fungsi | x_init | lr | epochs | x_optimal (±0.001) | converged |
+|--------|--------|-----|--------|---------------------|-----------|
+| quadratic | `4.0` | `0.1` | `1000` | `0.0` | `True` |
+| quadratic | `1.0` | `2.0` | `100` | divergen (x sangat besar) | `False` |
+| cubic | `2.0` | `0.01` | `10000` | `1.0` | `True` |
+
+**Constraints:**
+- `history` hanya menyimpan nilai `x` (bukan nilai fungsi)
+- Jika tidak konvergen dalam `epochs` langkah, `converged = False`
+- Output float dibulatkan 4 desimal
+
+---
+
+### M-5 — Analisis Dataset dengan Dictionary dan List Comprehension
+
+**Deskripsi:**
+Data analyst dan ML engineer sering bekerja dengan dataset berbentuk list of dictionaries. Implementasikan fungsi analisis dataset tanpa library eksternal.
+
+**Format dataset:** List of dict, contoh:
+```python
+[
+  {"id": 1, "age": 25, "salary": 50000, "dept": "IT", "label": 1},
+  {"id": 2, "age": 30, "salary": 60000, "dept": "HR", "label": 0},
+  ...
+]
+```
+
+**Fungsi yang harus dibuat:**
+
+```python
+def filter_by(dataset: list[dict], field: str, value) -> list[dict]: ...
+def select_columns(dataset: list[dict], columns: list[str]) -> list[dict]: ...
+def group_by(dataset: list[dict], field: str) -> dict: ...
+def compute_stats_per_group(dataset: list[dict], group_field: str, value_field: str) -> dict: ...
+def normalize_column(dataset: list[dict], column: str) -> list[dict]: ...
+def missing_value_report(dataset: list[dict]) -> dict: ...
+```
+
+**Spesifikasi:**
+- `filter_by`: kembalikan list dict di mana `row[field] == value`. Raise `KeyError("Field '{field}' tidak ada")` jika field tidak ada di row manapun.
+- `select_columns`: kembalikan list dict hanya dengan key yang ada di `columns`. Raise `KeyError("Column '{col}' tidak ditemukan")` jika salah satu column tidak ada.
+- `group_by`: kembalikan `{nilai_field: [list_row]}`.
+- `compute_stats_per_group`: untuk setiap grup, hitung `{"mean": float, "min": float, "max": float, "count": int}` dari `value_field`.
+- `normalize_column`: kembalikan dataset baru (tidak modifikasi in-place) di mana nilai kolom tersebut sudah dinormalisasi min-max. Nilai kolom harus numerik.
+- `missing_value_report`: kembalikan `{field: jumlah_None}` untuk setiap field yang memiliki minimal 1 nilai `None`.
+
+**Format Input (stdin):**
+```
+Baris 1: jumlah baris dataset (n)
+Baris 2..n+1: data dalam format CSV (header di baris 2)
+Baris n+2: operasi
+Baris n+3: argumen operasi
+```
+
+**Contoh Input:**
+```
+4
+id,age,dept,label
+1,25,IT,1
+2,30,HR,0
+3,28,IT,1
+4,35,HR,0
+group_by
+dept
+```
+
+**Contoh Output:**
+```
+IT: 2 records
+HR: 2 records
+```
+
+**Test Cases:**
+
+| Operasi | Input | Output |
+|---------|-------|--------|
+| filter_by dept=IT | dataset di atas | 2 rows dengan dept IT |
+| compute_stats age per dept | — | IT: mean=26.5, HR: mean=32.5 |
+| normalize_column age | — | age ternormalisasi 0.0–1.0 |
+
+**Constraints:**
+- Semua field yang dioperasikan selalu ada di dataset (kecuali untuk test error cases)
+- Dataset selalu memiliki minimal 1 baris
+- `normalize_column` tidak mengubah dataset asli (kembalikan copy)
+
+---
+
+## 🔴 HARD (5 Soal)
+
+---
+
+### H-1 — Implementasi Naive Bayes Classifier dari Scratch
+
+**Deskripsi:**
+Implementasikan **Gaussian Naive Bayes Classifier** dari nol untuk klasifikasi multi-kelas.
+
+**Fungsi/class yang harus dibuat:**
+
+```python
+import math
+
+def gaussian_pdf(x: float, mean: float, std: float) -> float: ...
+
+def naive_bayes_fit(
+    X: list[list[float]],
+    y: list[int]
+) -> dict: ...
+
+def naive_bayes_predict(
+    X_test: list[list[float]],
+    model: dict
+) -> list[int]: ...
+
+def naive_bayes_predict_proba(
+    X_test: list[list[float]],
+    model: dict
+) -> list[dict]: ...
+```
+
+**Spesifikasi:**
+
+`gaussian_pdf(x, mean, std)`:
+- Hitung PDF Gaussian: `(1 / (std * sqrt(2π))) * e^(-(x-mean)² / (2*std²))`
+- Jika `std == 0`, kembalikan `1.0` jika `x == mean`, else `0.0`
+
+`naive_bayes_fit(X, y)`:
+- Kembalikan `model` berupa dict dengan struktur:
+  ```python
+  {
+    "classes": [kelas_unik_sorted],
+    "priors": {kelas: P(kelas)},
+    "means": {kelas: [mean_per_fitur]},
+    "stds": {kelas: [std_per_fitur]}  # std populasi
+  }
   ```
-  Produk,Harga,Jumlah,Total
-  Laptop,8000000,2,16000000
-  Mouse,150000,10,1500000
-  Keyboard,500000,5,2500000
-  Monitor,2000000,3,6000000
+
+`naive_bayes_predict(X_test, model)`:
+- Untuk setiap sampel, hitung log posterior setiap kelas:
+  `log P(kelas) + sum(log(gaussian_pdf(x_j, mean_j, std_j)))`
+- Prediksi = kelas dengan log posterior tertinggi
+- Jika ada tie, pilih kelas dengan nilai integer **terkecil**
+
+`naive_bayes_predict_proba`:
+- Kembalikan list of dict `{kelas: probabilitas}` untuk setiap sampel
+- Konversi log scores ke probabilitas: `exp(score) / sum(exp(score))` (softmax dari log scores)
+- Probabilitas dibulatkan 4 desimal
+
+**Format Input (stdin):**
+```
+Baris 1: n_train n_features
+Baris 2..n_train+1: fitur dipisah spasi, label di kolom terakhir
+Baris n_train+2: n_test
+Baris n_train+3..akhir: fitur test dipisah spasi
+```
+
+**Contoh Input:**
+```
+6 2
+1.0 2.0 0
+1.5 1.8 0
+2.0 3.0 0
+5.0 6.0 1
+5.5 5.8 1
+6.0 6.2 1
+2
+1.2 2.1
+5.2 5.9
+```
+
+**Contoh Output:**
+```
+0
+1
+```
+
+**Test Cases:**
+
+| Skenario | X_train | y_train | X_test | Expected predict |
+|----------|---------|---------|--------|-----------------|
+| Linearly separable | kelas 0: fitur ~[1,2], kelas 1: fitur ~[5,6] | — | `[[1,2],[5,6]]` | `[0,1]` |
+| 3 kelas | kelas 0,1,2 masing-masing 10 sampel | — | sampel dari masing-masing kelas | label kelas yang benar |
+
+**Constraints:**
+- Kelas adalah integer non-negatif
+- Semua fitur adalah float
+- `n_features ≥ 1`, `n_samples ≥ 2`
+- Setiap kelas minimal memiliki 1 sampel training
+- Output probabilitas dibulatkan 4 desimal
+
+---
+
+### H-2 — Implementasi Algoritma Sorting untuk Data Ranking
+
+**Deskripsi:**
+Dalam ML, sorting digunakan untuk ranking prediksi, mencari nearest neighbor, dan menghitung metrik seperti AUC-ROC. Implementasikan sorting dan ranking dari nol.
+
+**Fungsi yang harus dibuat:**
+
+```python
+def merge_sort(data: list, key=None, reverse=False) -> list: ...
+def quicksort(data: list, key=None, reverse=False) -> list: ...
+def argsort(data: list, reverse=False) -> list[int]: ...
+def rank_data(data: list[float], method: str = "average") -> list[float]: ...
+def compute_auc_roc(y_true: list[int], y_scores: list[float]) -> float: ...
+```
+
+**Spesifikasi:**
+- `merge_sort` dan `quicksort`: implementasi dari nol, support `key` function dan `reverse`. Kembalikan list baru (tidak modifikasi in-place).
+- `argsort`: kembalikan list index yang akan mengurutkan data dari kecil ke besar. Contoh: `argsort([3,1,2])` → `[1,2,0]`.
+- `rank_data(data, method)`:
+  - `"average"`: rank tie diberi rata-rata rank
+  - `"min"`: rank tie diberi rank minimum
+  - `"max"`: rank tie diberi rank maksimum
+  - Rank dimulai dari 1
+- `compute_auc_roc`: hitung AUC-ROC menggunakan **metode trapesium**:
+  - Urutkan prediksi dari skor tertinggi ke terendah
+  - Hitung TPR dan FPR di setiap threshold
+  - Gunakan `argsort` yang kamu implementasikan
+  - AUC = luas di bawah kurva ROC
+
+**Format Input (stdin):**
+```
+Baris 1: operasi
+Baris 2: data dipisah spasi
+Baris 3 (opsional): argumen tambahan
+```
+
+**Contoh Input (argsort):**
+```
+argsort
+3.0 1.0 4.0 1.5 2.0
+```
+
+**Contoh Output:**
+```
+1 3 4 0 2
+```
+
+**Test Cases:**
+
+| Fungsi | Input | Output |
+|--------|-------|--------|
+| merge_sort | `[3,1,4,1,5]` | `[1,1,3,4,5]` |
+| quicksort reverse | `[3,1,4]` | `[4,3,1]` |
+| argsort | `[3,1,2]` | `[1,2,0]` |
+| rank_data average | `[3,1,2,1]` | `[4.0,1.5,3.0,1.5]` |
+| compute_auc_roc | y_true=`[1,1,0,0]`, scores=`[0.9,0.8,0.3,0.1]` | `1.0` |
+| compute_auc_roc | y_true=`[1,0,1,0]`, scores=`[0.5,0.5,0.5,0.5]` | `0.5` |
+
+**Constraints:**
+- `merge_sort` dan `quicksort` harus **diimplementasikan sendiri** — dilarang menggunakan `sorted()` atau `list.sort()` di dalamnya
+- AUC-ROC dibulatkan 4 desimal
+- `rank_data` dimulai dari rank 1
+
+---
+
+### H-3 — Implementasi Backpropagation 1 Hidden Layer
+
+**Deskripsi:**
+Implementasikan neural network sederhana dengan **1 hidden layer** menggunakan backpropagation. Ini adalah implementasi dari nol tanpa library apapun.
+
+**Arsitektur:** Input → Hidden (sigmoid) → Output (sigmoid) → Binary Cross-Entropy Loss
+
+**Fungsi yang harus dibuat:**
+
+```python
+import math
+import random
+
+def init_weights(n_input: int, n_hidden: int, n_output: int, seed: int = 42) -> dict: ...
+def forward(X: list[float], weights: dict) -> dict: ...
+def backward(X: list[float], y: float, cache: dict, weights: dict, lr: float) -> dict: ...
+def train(
+    X_train: list[list[float]],
+    y_train: list[float],
+    n_hidden: int,
+    lr: float,
+    epochs: int,
+    seed: int = 42
+) -> tuple[dict, list[float]]: ...
+def predict(X_test: list[list[float]], weights: dict) -> list[int]: ...
+```
+
+**Spesifikasi:**
+
+`init_weights(n_input, n_hidden, n_output, seed)`:
+- Gunakan `random.seed(seed)`, inisialisasi bobot dengan `random.uniform(-1, 1)`
+- Kembalikan:
+  ```python
+  {
+    "W1": [[float]*n_input]*n_hidden,   # bobot input→hidden
+    "b1": [float]*n_hidden,              # bias hidden
+    "W2": [[float]*n_hidden]*n_output,  # bobot hidden→output
+    "b2": [float]*n_output               # bias output
+  }
   ```
-- Baca file CSV menggunakan file I/O biasa (bukan library csv)
-- Hitung:
-  - Total penjualan keseluruhan
-  - Produk dengan penjualan tertinggi
-  - Produk dengan penjualan terendah
-  - Rata-rata penjualan per produk
-- Buat file output `laporan_penjualan.txt` dengan format terstruktur
-- Gunakan try-except untuk error handling
 
-**Output di Console:**
+`forward(X, weights)`:
+- `z1 = W1 @ X + b1` (perkalian matrix-vector)
+- `a1 = sigmoid(z1)`
+- `z2 = W2 @ a1 + b2`
+- `a2 = sigmoid(z2)`
+- Kembalikan cache: `{"z1", "a1", "z2", "a2"}`
+
+`backward(X, y, cache, weights, lr)`:
+- Hitung gradients menggunakan chain rule:
+  - `dL_da2 = a2 - y`
+  - `dL_dz2 = dL_da2 * a2 * (1 - a2)`
+  - `dL_dW2 = outer(dL_dz2, a1)` (outer product)
+  - `dL_db2 = dL_dz2`
+  - `dL_da1 = W2.T @ dL_dz2`
+  - `dL_dz1 = dL_da1 * a1 * (1 - a1)`
+  - `dL_dW1 = outer(dL_dz1, X)`
+  - `dL_db1 = dL_dz1`
+- Update weights: `W = W - lr * dW`
+- Kembalikan weights yang sudah diupdate
+
+`train`:
+- Jalankan SGD (satu sampel per update) dengan loop epochs
+- Setiap epoch: iterasi semua sampel, lakukan forward + backward
+- Simpan **rata-rata BCE loss per epoch** di `loss_history`
+- Kembalikan `(weights, loss_history)`
+
+`predict`:
+- Threshold `a2 >= 0.5` → label `1`, else `0`
+
+**Format Input (stdin):**
 ```
-=== LAPORAN PENJUALAN ===
-
-DATA PENJUALAN:
-Produk: Laptop | Harga: 8000000 | Jumlah: 2 | Total: 16000000
-Produk: Mouse | Harga: 150000 | Jumlah: 10 | Total: 1500000
-Produk: Keyboard | Harga: 500000 | Jumlah: 5 | Total: 2500000
-Produk: Monitor | Harga: 2000000 | Jumlah: 3 | Total: 6000000
-
-ANALISIS:
-Total Penjualan: Rp 26.500.000
-Produk Tertinggi: Laptop (Rp 16.000.000)
-Produk Terendah: Mouse (Rp 1.500.000)
-Rata-rata per Produk: Rp 6.625.000
-
-✓ Laporan tersimpan di laporan_penjualan.txt
-```
-
-**File yang dibuat:** `soal_13_file_io.py` + `data_penjualan.csv` (dibuat oleh program)
-
----
-
-### **Soal 14: Nested Loop - Sistem Pemesanan Tiket**
-Buat sistem pemesanan tiket bioskop dengan berbagai kondisi.
-
-**Requirement:**
-- Buat representasi kursi bioskop (5 baris × 8 kolom)
-- Kursi dinyatakan dengan: `[ ]` (kosong), `[X]` (terisi)
-- Fitur program:
-  - Tampilkan peta kursi dengan nomor baris (1-5) dan kolom (A-H)
-  - User memilih kursi (input: 1A, 2C, dll)
-  - Validasi: kursi harus kosong dan posisi valid
-  - Hitung harga berdasarkan baris:
-    - Baris 1: Rp 50.000
-    - Baris 2-3: Rp 75.000
-    - Baris 4-5: Rp 100.000
-  - User bisa memesan multiple kursi
-  - Tampilkan total harga
-  - Opsi untuk membatalkan pemesanan
-- Gunakan nested loop untuk menampilkan peta kursi
-
-**Output Contoh:**
-```
-=== SISTEM PEMESANAN TIKET BIOSKOP ===
-
-PETA KURSI (5 Baris × 8 Kolom):
-   A   B   C   D   E   F   G   H
-1  [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]  Rp 50.000
-2  [ ] [X] [ ] [ ] [ ] [ ] [X] [ ]  Rp 75.000
-3  [ ] [ ] [ ] [ ] [ ] [ ] [ ] [ ]  Rp 75.000
-4  [X] [ ] [X] [ ] [ ] [ ] [ ] [ ]  Rp 100.000
-5  [ ] [ ] [ ] [ ] [ ] [ ] [ ] [X]  Rp 100.000
-
-Pesan kursi (format: 1A, 2B, dll) atau 'selesai' untuk keluar
-Pilih kursi: 1A
-✓ 1A berhasil dipesan (Rp 50.000)
-
-Pilih kursi: 2A
-✓ 2A berhasil dipesan (Rp 75.000)
-
-Pilih kursi: selesai
-
-RINGKASAN PEMESANAN:
-Kursi yang dipesan: 1A, 2A
-Total Harga: Rp 125.000
-
-Lanjutkan pemesanan? (y/n): n
-Terima kasih telah menggunakan sistem kami!
+Baris 1: n_samples n_features
+Baris 2..n+1: fitur + label (label di kolom terakhir, 0 atau 1)
+Baris n+2: n_hidden lr epochs
 ```
 
-**File:** `soal_14_pemesanan_tiket.py`
-
----
-
-### **Soal 15: Function dengan Multiple Return & Logic Kompleks - Sistem Kalkulator Investasi**
-Buat program kalkulator investasi dengan logika perhitungan kompleks.
-
-**Requirement:**
-- Function `hitung_bunga_majemuk(principal, rate, time, n)` yang menghitung bunga majemuk
-  - Formula: `A = P(1 + r/n)^(nt)`
-  - Return: tuple (jumlah_akhir, bunga_total)
-- Function `validasi_input(principal, rate, time)` yang return tuple (is_valid, pesan_error)
-- Function `banding_investasi(principals, rate, time)` yang:
-  - Menerima list principal yang berbeda
-  - Hitung bunga majemuk untuk masing-masing
-  - Return: tuple (hasil_dict, investasi_terbaik)
-- Function `generate_laporan(nama_investasi, principal, final_amount, bunga)` yang:
-  - Generate string laporan terformat
-  - Return: string laporan
-- Main program:
-  - Minta input user (modal awal, suku bunga tahunan, waktu investasi dalam tahun)
-  - Bandingkan dengan pilihan investasi standar (100jt, 150jt, 200jt)
-  - Tampilkan hasil lengkap dengan analisis
-
-**Output Contoh:**
+**Contoh Input (XOR problem):**
 ```
-=== KALKULATOR INVESTASI ===
-
-Masukkan jumlah investasi awal (Rp): 100000000
-Masukkan suku bunga tahunan (%): 8
-Masukkan jangka waktu investasi (tahun): 5
-
-ANALISIS INVESTASI ANDA:
-Principal: Rp 100.000.000
-Suku Bunga: 8% per tahun
-Jangka Waktu: 5 tahun
-
-Jumlah Akhir: Rp 146.933.280
-Keuntungan Bunga: Rp 46.933.280
-ROI: 46.93%
-
-=== PERBANDINGAN INVESTASI STANDAR ===
-
-Investasi 100 Juta:
-Principal: Rp 100.000.000
-Jumlah Akhir: Rp 146.933.280
-Keuntungan: Rp 46.933.280
-
-Investasi 150 Juta:
-Principal: Rp 150.000.000
-Jumlah Akhir: Rp 220.399.920
-Keuntungan: Rp 70.399.920
-
-Investasi 200 Juta:
-Principal: Rp 200.000.000
-Jumlah Akhir: Rp 293.866.560
-Keuntungan: Rp 93.866.560
-
-REKOMENDASI: Investasi 200 Juta memberikan keuntungan terbesar
+4 2
+0 0 0
+0 1 1
+1 0 1
+1 1 0
+2 0.1 1000
 ```
 
-**File:** `soal_15_kalkulator_investasi.py`
-
----
-
-## KRITERIA PENILAIAN
-
-### **Aspek yang Dinilai:**
-
-1. **Correctness (40%)**
-   - Output sesuai requirement
-   - Logic program benar
-   - Menangani edge cases
-
-2. **Code Quality (30%)**
-   - Clean code dan readable
-   - Proper naming convention
-   - Penggunaan function yang efektif
-   - Penggunaan struktur data yang tepat
-
-3. **Error Handling (15%)**
-   - Validasi input user
-   - Try-except yang tepat
-   - Pesan error yang jelas
-
-4. **Documentation (15%)**
-   - Komentar yang jelas
-   - Docstring di function
-   - Readable output format
-
-### **Rubric Penilaian:**
-
-| Skor | Kriteria |
-|------|----------|
-| 5 | Sempurna - semua requirement terpenuhi, code berkualitas tinggi |
-| 4 | Baik - hampir semua requirement terpenuhi, sedikit issue |
-| 3 | Cukup - sebagian besar requirement terpenuhi, beberapa issue |
-| 2 | Kurang - requirement kurang terpenuhi, banyak issue |
-| 1 | Sangat Kurang - requirement tidak terpenuhi |
-
----
-
-## PANDUAN PENGUMPULAN
-
-### **Struktur Folder:**
+**Contoh Output:**
 ```
-UJIAN_PYTHON_DASAR/
-├── soal_1_konversi_suhu.py
-├── soal_2_genap_ganjil.py
-├── soal_3_hitung_grade.py
-├── soal_4_manipulasi_string.py
-├── soal_5_operasi_list.py
-├── soal_6_faktorial.py
-├── soal_7_data_karyawan.py
-├── soal_8_pola_bintang.py
-├── soal_9_list_comprehension.py
-├── soal_10_error_handling.py
-├── soal_11_tebak_angka.py
-├── soal_12_database_mahasiswa.py
-├── soal_13_file_io.py
-├── soal_13_data_penjualan.csv (auto generated)
-├── soal_14_pemesanan_tiket.py
-└── soal_15_kalkulator_investasi.py
+Epoch 100: Loss = 0.6931
+Epoch 200: Loss = 0.6920
+...
+Epoch 1000: Loss = 0.2341
+Predictions: [0, 1, 1, 0]
+Accuracy: 1.0000
 ```
 
-### **Checklist Sebelum Pengumpulan:**
-- [ ] Semua file `.py` sudah dibuat
-- [ ] Semua kode dapat dijalankan tanpa error
-- [ ] Output sesuai requirement
-- [ ] Ada komentar pada logic kompleks
-- [ ] Tidak ada hardcoding yang tidak perlu
-- [ ] Input validation sudah diterapkan
-- [ ] File sudah di-test sebelum dikumpulkan
+**Test Cases:**
+
+| Dataset | n_hidden | lr | epochs | Expected accuracy |
+|---------|----------|-----|--------|-------------------|
+| XOR (4 sampel) | 4 | 0.5 | 5000 | ≥ 0.75 |
+| AND gate (4 sampel) | 2 | 0.1 | 2000 | 1.0 |
+| OR gate (4 sampel) | 2 | 0.1 | 2000 | 1.0 |
+
+**Constraints:**
+- Implementasikan operasi matrix-vector secara manual (nested loop) — dilarang numpy
+- `outer(a, b)` = `[[a_i * b_j for b_j in b] for a_i in a]`
+- Matrix transpose dilakukan manual
+- Loss dicetak setiap 100 epoch
+- Output accuracy dibulatkan 4 desimal
 
 ---
 
-## TIPS MENGERJAKAN
+### H-4 — Implementasi Logistic Regression dengan Regularisasi
 
-1. **Jangan terburu-buru:** Pahami setiap requirement dengan baik sebelum coding
-2. **Test incrementally:** Test setiap bagian sebelum menggabungkan
-3. **Gunakan function:** Pisahkan logic ke dalam function yang reusable
-4. **Handling error:** Antisipasi kemungkinan error dari input user
-5. **Baca requirement berkali-kali:** Pastikan tidak ada yang terlewat
-6. **Output yang jelas:** Format output agar mudah dibaca
-7. **Jangan copy-paste:** Pahami setiap baris kode yang Anda tulis
+**Deskripsi:**
+Implementasikan **Logistic Regression** dengan gradient descent dan dua tipe regularisasi (L1 dan L2) untuk klasifikasi biner.
+
+**Fungsi yang harus dibuat:**
+
+```python
+def sigmoid(x: float) -> float: ...
+
+def logistic_regression_fit(
+    X: list[list[float]],
+    y: list[int],
+    lr: float = 0.01,
+    epochs: int = 1000,
+    regularization: str = "none",   # "none", "l1", "l2"
+    lambda_: float = 0.01,
+    tolerance: float = 1e-6,
+    verbose: bool = False
+) -> dict: ...
+
+def logistic_regression_predict(
+    X: list[list[float]],
+    model: dict,
+    threshold: float = 0.5
+) -> list[int]: ...
+
+def logistic_regression_predict_proba(
+    X: list[list[float]],
+    model: dict
+) -> list[float]: ...
+
+def compute_decision_boundary(model: dict, x_range: tuple) -> tuple: ...
+```
+
+**Spesifikasi:**
+
+`logistic_regression_fit`:
+- Inisialisasi `weights = [0.0] * n_features`, `bias = 0.0`
+- Setiap epoch, hitung gradient untuk **seluruh dataset** (batch gradient descent):
+  - `y_hat = sigmoid(X @ w + b)`
+  - `dw = (1/n) * X.T @ (y_hat - y)`
+  - `db = (1/n) * sum(y_hat - y)`
+  - Regularisasi L2: tambahkan `(lambda_ / n) * w` ke `dw`
+  - Regularisasi L1: tambahkan `(lambda_ / n) * sign(w)` ke `dw` (sign: 1 jika positif, -1 jika negatif, 0 jika nol)
+- Berhenti jika `max(|delta_w|) < tolerance`
+- Kembalikan `{"weights": list, "bias": float, "loss_history": list, "epochs_run": int, "converged": bool}`
+- Jika `verbose=True`: cetak `"Epoch {e}: Loss = {loss:.6f}"` setiap 100 epoch
+
+`compute_decision_boundary(model, x_range)`:
+- Untuk model 2-fitur: kembalikan `(x_values, y_values)` di mana `y = -(w[0]*x + bias) / w[1]`
+- `x_range` adalah tuple `(x_min, x_max)`, buat 100 titik merata di range tersebut
+- Raise `ValueError("Decision boundary hanya tersedia untuk model 2 fitur")` jika bukan 2 fitur
+
+**Format Input (stdin):**
+```
+Baris 1: n_samples n_features
+Baris 2..n+1: fitur + label (label terakhir)
+Baris n+2: lr epochs regularization lambda_
+```
+
+**Contoh Input:**
+```
+6 2
+1.0 2.0 0
+1.5 1.8 0
+2.0 1.5 0
+5.0 6.0 1
+5.5 5.8 1
+6.0 6.2 1
+0.1 500 l2 0.01
+```
+
+**Contoh Output:**
+```
+Converged: True
+Epochs run: 312
+Final weights: [1.2345, 1.4567]
+Final bias: -7.8901
+Accuracy: 1.0000
+```
+
+**Test Cases:**
+
+| Dataset | Regularisasi | Accuracy (≥) |
+|---------|-------------|--------------|
+| Linearly separable 2D | none | `1.0` |
+| Linearly separable 2D | l2, lambda=0.1 | `1.0` |
+| Linearly separable 2D | l1, lambda=0.1 | `1.0` |
+| Non-separable | none | `≥ 0.7` |
+
+**Constraints:**
+- Semua operasi matrix-vector dilakukan manual
+- `sign(0) = 0`
+- Loss = binary cross-entropy dengan clipping seperti di soal M-2
+- Output float dibulatkan 4 desimal
 
 ---
 
-## SCORING SUMMARY
+### H-5 — Pipeline Feature Engineering Lengkap
 
-| Bagian | Jumlah Soal | Poin per Soal | Total Poin |
-|--------|-------------|---------------|-----------|
-| Mudah | 5 | 5 | 25 |
-| Medium | 5 | 15 | 75 |
-| Sulit | 5 | 15 | 75 |
-| **TOTAL** | **15** | **-** | **175** |
+**Deskripsi:**
+Buat pipeline feature engineering end-to-end yang menggabungkan semua konsep sebelumnya: cleaning, encoding, scaling, splitting, dan evaluasi.
 
-**Konversi ke Nilai 100:**
-- Skor ÷ 1.75 = Nilai Akhir
+**Yang harus diimplementasikan:**
 
-| Skor Total | Nilai Akhir | Grade |
-|-----------|-------------|-------|
-| 157-175 | 90-100 | A |
-| 140-156 | 80-89 | B |
-| 122-139 | 70-79 | C |
-| < 122 | < 70 | D (TIDAK LULUS) |
+```python
+def load_csv_string(csv_string: str) -> tuple[list[list], list[str]]: ...
+def detect_feature_types(data: list[list], headers: list[str]) -> dict: ...
+def handle_missing_values(
+    data: list[list],
+    headers: list[str],
+    strategy: dict  # {column: "mean"|"median"|"mode"|"drop"|"constant:<value>"}
+) -> list[list]: ...
+def auto_preprocess(
+    data: list[list],
+    headers: list[str],
+    target_column: str,
+    scale_numeric: bool = True,
+    encode_categorical: bool = True
+) -> tuple[list[list[float]], list, list[str]]: ...
+def feature_importance_correlation(
+    X: list[list[float]],
+    y: list[float],
+    feature_names: list[str]
+) -> list[tuple[str, float]]: ...
+```
+
+**Spesifikasi:**
+
+`load_csv_string(csv_string)`:
+- Parse string CSV (baris pertama = header), kembalikan `(data, headers)`
+- Coba konversi setiap nilai ke float. Jika gagal, biarkan sebagai string. Jika string kosong atau `"NA"` atau `"null"`, ubah menjadi `None`.
+
+`detect_feature_types(data, headers)`:
+- Kembalikan dict `{column: type}` di mana type adalah `"numeric"` atau `"categorical"`
+- Kolom dianggap numeric jika mayoritas (>50%) nilai non-None bisa direpresentasikan sebagai float
+
+`handle_missing_values(data, headers, strategy)`:
+- `"mean"` / `"median"` / `"mode"`: isi dengan statistik kolom tersebut (hanya nilai non-None)
+- `"drop"`: hapus seluruh baris yang memiliki None di kolom tersebut
+- `"constant:<value>"`: isi dengan value yang diberikan (misal `"constant:0"` → isi dengan 0)
+- Kembalikan dataset baru (tidak modifikasi in-place)
+
+`auto_preprocess(data, headers, target_column, ...)`:
+- Pisahkan kolom target dari fitur
+- Jika `encode_categorical=True`: terapkan label encoding ke kolom kategorikal
+- Jika `scale_numeric=True`: terapkan min-max normalization ke kolom numerik
+- Kembalikan `(X, y, feature_names)` di mana X adalah list of lists of float
+
+`feature_importance_correlation(X, y, feature_names)`:
+- Hitung **Pearson correlation** antara setiap fitur dan target:
+  `r = sum((x_i - mean_x)(y_i - mean_y)) / sqrt(sum((x_i - mean_x)²) * sum((y_i - mean_y)²))`
+- Kembalikan list of `(feature_name, |r|)` diurutkan dari korelasi **terbesar ke terkecil**
+- Jika std = 0 untuk sebuah fitur, korelasi = 0.0
+
+**Format Input (stdin):**
+CSV string diberikan langsung, diikuti instruksi operasi.
+
+**Contoh Input:**
+```
+age,salary,dept,churn
+25,50000,IT,0
+30,60000,HR,1
+28,,IT,0
+35,70000,HR,1
+22,45000,IT,0
+auto_preprocess
+churn
+```
+
+**Contoh Output:**
+```
+Feature names: ['age', 'salary_normalized', 'dept_encoded']
+X shape: 5 x 3
+y: [0, 1, 0, 1, 0]
+Missing values in salary: filled with mean (56250.0)
+```
+
+**Test Cases:**
+
+| Input CSV | Operasi | Expected |
+|-----------|---------|----------|
+| 5 baris, 1 missing | handle_missing mean | baris tetap 5, None terganti mean |
+| 5 baris, 1 missing | handle_missing drop | baris = 4 |
+| mixed numeric+categorical | detect_types | type per kolom benar |
+| 2 fitur + target | feature_importance | urutan korelasi descending |
+
+**Constraints:**
+- Tidak ada pandas atau library eksternal
+- `auto_preprocess` menangani missing values dengan strategi `"mean"` untuk numerik dan `"mode"` untuk kategorikal secara otomatis sebelum encoding/scaling
+- Pearson correlation dibulatkan 4 desimal
+- Kolom dengan semua nilai None di-drop otomatis di `auto_preprocess`
 
 ---
 
-## CATATAN PENTING
+## 📊 Ringkasan
 
-⚠️ **Peserta yang memperoleh nilai < 70 HARUS melakukan remedial dan mengulang soal-soal yang gagal sebelum lanjut ke course berikutnya.**
+| Bagian | Soal | Topik Utama |
+|--------|------|-------------|
+| Easy | E-1 | Statistik dasar (mean, median, mode, variance) |
+| Easy | E-2 | Normalisasi dan standarisasi data |
+| Easy | E-3 | Operasi matrix dengan list of lists |
+| Easy | E-4 | Fungsi aktivasi neural network |
+| Easy | E-5 | Encoding fitur kategorikal |
+| Medium | M-1 | K-Fold cross validation |
+| Medium | M-2 | Loss functions (MSE, MAE, BCE, CCE) |
+| Medium | M-3 | NLP preprocessing dan Bag-of-Words |
+| Medium | M-4 | Gradient descent 1D |
+| Medium | M-5 | Analisis dataset dengan dict dan list comprehension |
+| Hard | H-1 | Naive Bayes Classifier dari scratch |
+| Hard | H-2 | Sorting algorithms + AUC-ROC |
+| Hard | H-3 | Backpropagation 1 hidden layer dari scratch |
+| Hard | H-4 | Logistic Regression + regularisasi L1/L2 |
+| Hard | H-5 | Pipeline feature engineering end-to-end |
 
-✅ **Peserta yang memperoleh nilai >= 70 DIIZINKAN lanjut ke Python Intermediate / Course berikutnya.**
+**Penilaian:** Setiap soal dinilai berdasarkan test case yang lolos.
 
----
+| Grade | Soal Lulus |
+|-------|-----------|
+| A | 13–15 soal |
+| B | 10–12 soal |
+| C | 7–9 soal |
+| < C | ≤ 6 soal |
 
-**Good Luck! 🚀**
-
-*Semoga Anda telah menguasai semua konsep dasar Python dengan baik. Jika masih ada yang kurang, jangan ragu untuk review materi sebelum mengerjakan soal.*
-
----
-
-**Tanggal Terakhir Dikumpulkan:** -  
-**Dosen Pengampu:** Prof. Claude AI  
-**Semester:** 1 / 2024
+> **Syarat lulus minimum:** Semua 5 soal Easy harus lulus.
