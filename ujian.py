@@ -1,392 +1,488 @@
-# print('selamat datang di assetment akhir')
-# print('soal pertama')
-
-# suhu = float(input('masukan suhu yang ingin di ubah :'))
-# fahrenhait = (suhu * 9//5 ) + 32
-
-# print(f' suhu {suhu}°c dan fahrenhait {fahrenhait}°f')
-
-# print('soal kedua')
-# one = int(input('Masukkan angka ke-1:'))
-# two = int(input('Masukkan angka ke-2:'))
-# three = int(input('Masukkan angka ke-3:'))
-# four  = int(input('Masukkan angka ke-4:'))
-# fifty = int(input('Masukkan angka ke-5:'))
-
-# number = [one,two,three,four,fifty]
-# genap = 0
-# ganjil = 0
-# for n in number:
-#     if n % 2 == 0:
-#         print('GENAP')
-#         genap += 1
-#     else:
-#         print('GANJIl')
-#         ganjil += 1
-
-#     print(f"""hasil analisis
-#     {one} adalah {'GENAP' if one % 2 == 0 else 'GANJIL'}
-#     {two} adalah {'GENAP' if two % 2 == 0 else 'GANJIL'}
-#     {three} adalah {'GENAP' if three % 2 == 0 else 'GANJIL'}
-#     {four} adalah {'GENAP' if four % 2 == 0 else 'GANJIL'}
-#     {fifty} adalah {'GENAP' if fifty % 2 == 0 else 'GANJIL'}""")
-
-# print(f'Genap = {genap} \n Ganjil = {ganjil}')
-
-# print('soal ketiga')
-# nama = input('masukan nama anda :')
-# first_exam = int(input('masukan nilai ujian pertama:'))
-# seccond_exam = int(input('masukan nilai ujian kedua :'))
-# third_exam = int(input('masukan nilai ujian ketiga :'))
-# avarege_exam = (first_exam + seccond_exam + third_exam)/3
-# grade = ' '
-
-# if avarege_exam >= 85 :
-#     grade = 'A'
-# elif avarege_exam >= 75 :
-#     grade = 'B'
-# elif avarege_exam >= 60 :
-#     grade = 'C'
-# else:
-#     print('maaf kamu tidak lulus')
+suhu = float(input('masukan suhu yang ingin di input:'))
 
 
-# print(f'nama siswa = {nama}\n nilai ujian pertama {first_exam}\n nilai ujian kedua {seccond_exam}\n nilai ujian ketiga {third_exam}')
-# print(f'nilai rata rata = {avarege_exam}')
-# print(f'Grade = {grade}')
+fahrenheit = (suhu * 9/5) + 32
+print(f"{suhu}°C sama dengan {fahrenheit:.2f}°F")
 
-# print('soal keempat')
+first = float(input('masukan angka ke 1 :'))
+seccond =float(input('masukan angka ke 2 :'))
+third = float(input('masukan angka ke 3 :'))
+four = float(input('masukan angka ke 4 :'))
+five = float(input('masukan angka ke 5 :'))
 
-
-# kalimat = input('masukan kalimat anda :').title()
-# print(f"""
-# kalimat = {kalimat}
-# jumlah abjad = {len(kalimat)}
-# jumlah kata = {len(kalimat.split(' '))}
-# uppercase = {kalimat.upper()}
-# lowercase = {kalimat.lower()}
-# titlecase = {kalimat.title()}
-# posisi python = {kalimat.find('Python')}""")
-
-# print('soal kelima')
-# numbers = [10,20,30,40,50]
-# print(numbers)
-# numbers.append(60)
-# numbers.append(70)
-# numbers.append(80)
-
-# print(f'Setelah di tambahkah [60,70,80]: {numbers}')
-
-# numbers[2]= 25
-# print(f'setelah di tambahkan 25 : {numbers}')
-# del numbers[4]
-# print(f'setelah indeks ke-4 di hapus : {numbers}')
-# print(f'total elemen = {len(numbers)}')
-
-# print('soal keenam')
-
-# first_number = int(input('masukan angka 1 :'))
-# second_number = int(input('masukan angka 2 :'))
-# third_number = int(input('masukan angka 3 :'))
-
-# def factorial_iterative(n: int)-> int: 
-#     if n < 0:
-#         ValueError('factorial is not difined for negativ number')
-#     result = 1
-#     for i in range(2,n + 1):
-#         result *= i
-#     return result
-
-# print(f'Faktorial dari {first_number} adalah: {factorial_iterative(first_number)}')
-# print(f'Faktorial dari {second_number} adalah: {factorial_iterative(second_number)}')
-# print(f'Faktorial dari {third_number} adalah: {factorial_iterative(third_number)}')
-# print(f'Total hitungan: 3 angka telah diproses')
-
-
-# data = []
-# def Data_karyawan(nama= str, devisi = str , gaji = int):
-#     data_karyawan = {}
-#     data_karyawan['nama']= nama
-#     data_karyawan['devisi'] = devisi
-#     data_karyawan['gaji'] = gaji
-#     data.append(data_karyawan)
-#     print(f'nama = {nama} bekerja di devisi = {devisi} gaji = {gaji}')
-
-# def tampilkan_data(data):
-#     for i, karyawan in enumerate(data, 1):
-#         print(f'{i} {karyawan['nama']} - {karyawan['devisi']} - {karyawan['gaji']}')
-
-# def cari_karyawan(nama,data):
-#     print(f'di cari nama = {nama}')
-#     for item in data:
-#      if item['nama'] == nama:
-#         print(f'di temukan {item['nama']} devisi {item['devisi']} gaji {item['gaji']}')
-
-# def update_gaji(nama : str, gaji_baru : int, data):
-#    print(f'update gaji {nama} menjadi Rp {gaji_baru}')
-#    for item in data:
-#       if item['nama'] == nama:
-#          item['gaji'] = gaji_baru
-#          print(f'gaji {nama} berhasil di update')
-#          break
-#       else:
-#          print(f'gaji {nama} gagal di update')
-   
-# def hapus_karyawan(nama,data):
-#    print(f'hapus data {nama}')
-#    for item in data:
-#     if item['nama'] == nama :
-#       data.remove(item)
-#       print(f'< data {nama} berhasil di hapus')
-#       return
-#     else :
-#        print(f'data {nama} tidak berhasil di hapus')
-
-# print('== DATA KARYAWAN ==')
-# Data_karyawan('budi','data analyist', 10000)
-# Data_karyawan('jobel','dokter', 10000)
-# Data_karyawan('jordan','ai engeenering', 20000)
-
-# print('data semua karyawan')
-# tampilkan_data(data)
-
-# print('cari karyawan')
-# cari_karyawan('jordan', data)
-
-# print('update gaji')
-# update_gaji(nama='budi',gaji_baru=300000,data= data)
-
-# print('hapus data')
-# hapus_karyawan(nama= 'jobel',data=data)
-
-# value = int(input('masukan angka :'))
-# print('pola segitiga bintang')
-# for i in range(1, value + 1):
-#     for j in range(i):
-#         print('*', end=' ')
-#     print()
-# print('pola segitiga bintang terbalik')
-# for i in range(value,0,-1):
-#     for j in range(i):
-#         print('*', end=' ')
-#     print()
-
-# import random
-
-# random_list = [random.randint(1, 100) for _ in range(10)]
-# print(f'List original : {random_list}')
-# print(f'list angka 50 ke atas : {sorted([num for num in random_list if num >= 50])}')
-# print(f'list angka genap : {sorted([num for num in random_list if num % 2 == 0])}')
-# print(f' angka yang habis di bagi 3 : {len(sorted([num for num in random_list if num % 3 == 0]))}')
-
-# print(f"""statistik
-#       angka terbesar = {max(random_list)}
-#       angka terkecil = {min(random_list)}
-#       rata-rata = {sum(random_list) / len(random_list)}
-#       jumlah angka = {sum(random_list)}""")
-
-# print(f'list terurut dari kecil ke besar : {sorted(random_list)}')
-# print(f'list terurut dari besar ke kecil : {sorted(random_list, reverse=True)}')
-
-# try:
-#     numbers = int(input('masukan angka pertama:'))
-#     second_numbers = int(input('masukan angka kedua:'))
-# except ValueError:
-#       print('ValueError angka harus berupa integer')
-#       exit()
-# try:
-#     operator = input('masukan operator (+,-,*,/):')
-# except ValueError:
-#     print('ValueError operator tidak valid')
-#     exit()
-
-# if operator == '+':
-#    numbers += second_numbers
-#    print(f'hasil penjumlahan = {numbers}')
-# elif operator == '-':
-#    numbers -= second_numbers
-#    print(f'hasil pengurangan = {numbers}')
-# elif operator == '*':
-#    numbers *= second_numbers
-#    print(f'hasil perkalian = {numbers}')
-# elif operator == '/':
-#    try:
-#       numbers /= second_numbers
-#       print(f'hasil pembagian = {numbers}')
-#    except ZeroDivisionError:
-#       print('Error: Pembagian dengan nol tidak diperbolehkan.')
-
-# print('=== OPERATOR SELESAI ===')
-from unicodedata import name
-
-
-# history = []
-# def TebakAngka():
-#     import random
-#     angka_rahasia = random.randint(1,10)
-#     percobaan = 0
-#     batas_percobaan = 10
-    
-#     print('selamat datang di permainan tebak angka')
-#     while percobaan < batas_percobaan:
-#         tebakan = int(input('masukan angka antara 1 sampai 10 :'))
-#         history.append(tebakan)
-#         if tebakan < angka_rahasia:
-#             percobaan += 1
-#             print('terlalu rendah')
-#         elif tebakan > angka_rahasia:
-#             percobaan += 1
-#             print('terlalu tinggi')
-#         else:
-#             print(f'selamat tebakan anda benar {angka_rahasia}')
-#             break
-#     print(f'anda telah mencoba {percobaan} kali, angka rahasia adalah {angka_rahasia}')
-#     print('skor permainan tebak angka :')
-#     print(f'history percobaan = {history}')
-#     if percobaan == 3 and percobaan <= 3:
-#          print('skor anda = 100')
-#     elif percobaan >= 4 and percobaan <= 5:
-#          print('skor anda = 75')
-#     elif percobaan >= 6 and percobaan <= 7:
-#          print('skor anda = 50')
-#     else:
-#          print('skor anda = 25')
-         
-# TebakAngka()
-
-# db_mahasiswa = {}
-# def tambah_mahasiswa(nama,nim,semestar,gpa,):
-#     if nim in db_mahasiswa:
-#        raise ValueError(f'Mahasiswa dengan NIM {nim} sudah ada dalam database.')
-#     else:
-#         db_mahasiswa[nim] = (nama, semestar, gpa)
-#         print(f'{nim} - {nama} - (semester{semestar} -  gpa{gpa} ditambahkan')
-
-# def tampilkan_mahasiswa():
-#     nama = input('masukan nama mahasiswa yang ingin di tampilkan :')
-#     if nama not in [mahasiswa[0] for mahasiswa in db_mahasiswa.values()]:
-#         print(f'Mahasiswa dengan nama {nama} tidak ditemukan dalam database.')
-#     else:
-#         print('Daftar Mahasiswa :')
-#         for nim, (nama, semester, gpa) in db_mahasiswa.items():
-#             print(f'NIM: {nim}, Nama: {nama}, Semester: {semester}, GPA: {gpa}')
-
-# def update_gpa(nim, gpa_baru,db):
-#     nama,semester,gpa = db[nim]
-#     db[nim] = (nama, semester, gpa_baru)
-#     print(f'GPA mahasiswa dengan NIM {nim} dari {gpa} berhasil diperbarui menjadi {gpa_baru}.')
-
-
-# def cari_mahasiswa(min_gpa ,db):
-#     for nim, (nama, semester, gpa) in db.items():
-#         if gpa >= min_gpa:
-#             print(f'Mahasiswa dengan GPA {gpa} ditemukan:')
-#             print(f'NIM: {nim}, Nama: {nama}, Semester: {semester}, GPA: {gpa}')
-
-# def statistik_gpa(db):
-#     if not db:
-#         print('Database mahasiswa kosong.')
-#         return
-#     else:
-#         gpa_list = [gpa[2] for gpa in db.values()]
-#         print(f'Statistik GPA:')
-#         print(f'GPA Tertinggi: {max(gpa_list)}')
-#         print(f'GPA Terendah: {min(gpa_list)}')
-#         print(f'GPA Rata-rata: {sum(gpa_list) / len(gpa_list):.2f}')
-
-# def hapus_mahasiswa(nim, db):
-#     if nim in db:
-#         del db[nim]
-#         print(f'Mahasiswa dengan NIM {nim} berhasil dihapus dari database.')
-
-
-# tambah_mahasiswa('budi', '12345', 3 , 3.5)
-# tampilkan_mahasiswa()
-# update_gpa('12345', 3.8, db_mahasiswa)
-# statistik_gpa(db_mahasiswa)
-# cari_mahasiswa(3.0, db_mahasiswa)
-# hapus_mahasiswa('12345', db_mahasiswa)
-
-
-# with open('data_penjualan.txt', 'w') as file:
-#     while True:
-#         produk = input('Masukkan nama produk: ')
-#         harga = float(input('Masukkan harga produk: '))
-#         jumlah = int(input('Masukkan jumlah produk: '))
-#         file.write(f' {produk}, {harga}, {jumlah}, {harga * jumlah}\n')
-#         print(f'Data Penjualan {produk} berhasil disimpan ke file data_penjualan.txt')
-#         lanjut = input('Apakah Anda ingin menambahkan data penjualan lagi? (y/n): ')
-#         if lanjut.lower() != 'y':
-#                 break
-
-def hitung_bunga_majemuk(principal, rate, time, n=1):
-    rate = rate / 100
-    jumlah_akhir = principal * (1 + rate / n) ** (n * time)
-    bunga_total = jumlah_akhir - principal
-    return jumlah_akhir, bunga_total
-
-def validasi_input(principle, rate, time):
-    if principle <= 0:
-        return False, 'modal harus lebih dari 0'
-    if rate <= 0 :
-        return False, 'suku bunga harus lebih dari 0'
-    if time <= 0 :
-        return False, 'waktu investasi harus lebih dari kosong'
+data = [first]
+genap = 0
+ganjil = 0
+for i in data:
+    if i % 2 == 0:
+        genap += 1
     else:
-        return True, ""
-def banding_investasi(principle, rate , time):
-    hasil_dict = {}
+        ganjil += 1
 
-    for modal in principle:
-        akhir, bunga = hitung_bunga_majemuk(modal,rate,time)
-        hasil_dict[modal] = {
-            'jumlah_akhir' : akhir,
-            'bunga' : bunga
-        }
+print('== HASIL ANALISiS ==')
+print(f"""
+{first} adalah angka {'GENAP' if first % 2 == 0 else 'GANJIL' }
+{seccond} adalah angka {'GENAP' if seccond % 2 == 0 else 'GANJIL' }
+{third} adalah angka {'GENAP' if third  % 2 == 0 else 'GANJIL' }
+{four} adalah angka {'GENAP' if four % 2 == 0 else 'GANJIL' }
+{five} adalah angka {'GENAP' if five % 2 == 0 else 'GANJIL' }""")
 
-    investasi_terbaik = max(
-        hasil_dict,
-        key= lambda x : hasil_dict[x] ['jumlah_akhir']
-    )
-    return hasil_dict,investasi_terbaik
+print(f'JUMLAH GENAP {genap}\nJUMLAH GANJIL {ganjil}')
+grade = []
+nama_siswa = input('masukan nama siswa :')
+nilai1 = int(input('masukan nilai ujian 1 :'))
+nilai2 = int(input('masukan nilai ujian 2 :'))
+nilai3 = int(input('masukan nilai ujian 3 :'))
+data = [nilai1,nilai2,nilai3]
+rata_rata = (sum(data) / len(data))
 
-def generate_laporan(nama_investasi, principal,final_amount, bunga):
+kalimat = input('masukan kalimat :')
+total_abjad = len(kalimat)
+title = kalimat.title()
+cari_nama = input('masukan nama di cari :')
+cari = kalimat.find(cari_nama)
+total_kata = kalimat.strip().split(' ')
+
+print(f"""
+kalimat original = {kalimat}
+total abjad = {total_abjad}
+total_kata = {total_kata}
+""")
+grade = []
+if rata_rata >= 85:
+    grade.append('GRADE A')
+elif rata_rata >= 75 and rata_rata < 80 :
+    grade.append('GRADE B')
+elif rata_rata >= 65 and rata_rata < 75 :
+    grade.append('GRADE C') 
+else:
+    print('maaf kamu tidak lulus')
+    
+
+print('== HASIL UJIAN ==')
+print(f"""
+Nama : {nama_siswa}
+Nilai 1 : {nilai1}
+Nilai 2 : {nilai2}
+Nilai 3 : {nilai3}""")
+print(f'rata rata : {rata_rata}')
+print(f'{rata_rata:.2f}')
+print(grade)
+
+kalimat = input('masukan kalimat :')
+total_abjad = len(kalimat)
+kata = kalimat.strip().split(' ')
+total_kata = len(kata)
+upper = kalimat.upper()
+lower = kalimat.lower()
+# upper case = {upper}
+# lower case = {lower}
+# title case = {title}
+# posisi {cari_nama} = di temukan di indeks {cari}""")
+
+list = []
+list2 = []
+
+for i in range(5):
+    nilai = (int(input('masukan angka :')))
+    list.append(nilai)
+
+print(f'list original : {list}')
+
+for i in range(3):
+    nilai2 = int(input('masukan 3 number tambahan :'))
+    list2.append(nilai2)
+    total = list + list2
+total = list + list2
+
+print(f'setelah di tambahkan {list2} =\n {total}')
+sisipkan = total.insert(2, 25)
+print(f'setelah di sisipkan \" 25 \" di indeks[2] = {total}')
+del total[2]
+print(f'setelah indeks 2 di hapus = {total}')
+
+print(f'total elemen = {len(total)}')
+
+one = int(input('masukan angka 1 :'))
+two = int(input('masukan angka 2 :'))
+three = int(input('masukan angka 3 :'))
+
+def hitung_faktorial(n):
+    if n < 0:
+        raise ValueError('input tidak bisa bernilai negatif')
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result  
+
+print(f'Masukkan angka ke-1: {one}, faktorial dari {one} adalah :{hitung_faktorial(one)}')
+print(f'Masukkan angka ke-2: {two},  faktorial dari {two} adalah : {hitung_faktorial(two)}')
+print(f'Masukkan angka ke-3: {three}, faktorial dari {three} adalah : {hitung_faktorial(three)}')
+print('total hitungan : 3 angka telah di proses')
+
+data = []
+def tambah_karyawan(nama,devisi,gaji):
+    data_karyawan ={}
+    data_karyawan['nama'] = nama
+    data_karyawan['devisi'] = devisi
+    data_karyawan['gaji'] = gaji
+    data.append(data_karyawan)
+    print(f'nama : {nama}, devisi : {devisi}, gaji : Rp{gaji} di tambahkan ')
+
+def tampilkan_data(data):
+    for i, karyawan in enumerate(data,1):
+        print(f'{i}. {karyawan['nama']} - {karyawan['devisi'] }- Rp{karyawan['gaji']}')
+
+def cari_karyawan(nama,data):
+    print(f'di cari nama {nama}')
+    for item in data:
+        if item['nama'] == nama:
+            print(f'di temukan nama : {nama} bekerja di bidang : {item['devisi']} gaji : Rp{item['gaji']}')
+
+def update_gaji(nama,gaji_baru,data):
+    print(f'di cari nama {nama}')
+    for key in data:
+        if key['nama'] == nama:
+            print(f'ubah gaji karyawan gaji awal Rp{key['gaji']} di update ke gaji baru menjadi Rp{gaji_baru}')
+
+def hapus_karyawan(nama,data):
+    print(f'nama : {nama}')
+    for item in data: 
+        if item['nama'] == nama:
+            data.remove(item)
+            print(f'data {nama} berhasil di hapus dari sistem')
+
+print('menambah kan data karyawan')
+tambah_karyawan('BUDI','IT',1000)
+tambah_karyawan('ASEP','SISTEM DATA',3000)
+tambah_karyawan('UCUP','WEB DEV', 2000)
+
+print('menampilkan data karyawan')
+tampilkan_data(data)
+
+print('cari karyawan')
+cari_karyawan('BUDI',data)
+cari_karyawan('ASEP',data)
+cari_karyawan('UCUP',data)
+
+print('update gaji karyawan')
+update_gaji('BUDI',200000,data)
+update_gaji('ASEP',3000,data)
+update_gaji('UCUP',1500,data)
+
+print('hapus data karyawan ')
+hapus_karyawan('BUDI',data)
+
+number = int(input('masukan jumlah baris : '))
+print('POLA SEGIGA :')
+for i in range(1,number + 1):
+    for j in range(i):
+        print('*', end=' ')
+    print()
+print('POLA SEGITIGA TERBALIK :')
+for i in range(number,0,-1):
+    for i in range(i):
+        print('*', end=' ')
+    print()
+
+import random
+
+random_list =[random.randint(1,100) for i in range(15)]
+
+print(f'original list {random_list}')
+print(f'number > 50 = {sorted([x for x in random_list if x > 50 ])}')
+print(f'number genap in list : {(sorted([x for x in random_list if x % 2 == 0]))}')
+print(f'jumlah angka yang habis di bagi 3 : {len(sorted([x for x in random_list if x % 3 == 0]))}')
+print()
+print('STATISTIK')
+print(f"""
+# Angka terbesar = {max(random_list)}
+# Angka terkecil = {min(random_list)}
+# rata rata = {sum(random_list) / len(random_list)}
+# List terurut = {sorted(random_list)}
+# """)
+
+
+try:
+    while True :
+        angka1 = int(input('masukan angka pertama :'))
+
+        while True:
+            operator = input('masukan operator = ')
+
+            if operator == '=':
+                print(f'result {angka1} ')
+                break
+            angka2 = int(input('masukan angka selanjutnya :'))
+
+            if operator == '+':
+                angka1 += angka2
+            elif operator == '-':
+                angka1 -= angka2
+            elif operator == '*':
+                angka1 *= angka2
+            elif operator == '/':
+                if angka2 != 0:
+                    angka1 /= angka2
+            else:
+                raise ValueError('operator tidak valid')
+                
+
+        lanjutan = input('ingin menghitung lagi (ya/no) :')
+        if lanjutan == 'no':
+            break
+except ValueError:
+    raise ValueError('input harus berupa number(int)')
+except ZeroDivisionError:
+    raise ZeroDivisionError('input pembagian tidak bole 0')
+
+import random
+random_number = random.randint(1,10)
+list_tebakan = []
+
+for i in range(10):
+    tebakan_random = int(input(f'masukan tebakan random : tebakan ke-{i} :'))
+    list_tebakan.append(tebakan_random)
+    
+    if tebakan_random == random_number:
+        print(f'jawaban kamu {tebakan_random} benar!')
+        break
+    elif tebakan_random > random_number :
+        print(f'tebakan ke {i+1 } ')
+        print('tebakan terlalu besar!')
+    elif tebakan_random < random_number:
+        print(f'tebakan ke {i+1 }')
+        print('tebakan terlalu kecil!')
+
+print(f'history tebakan {list_tebakan}')
+data = f'jumlah tebakan = {len(list_tebakan)}'
+print(data)
+score = 0
+if len(list_tebakan) <= 3 :
+    print('skor kamu 90')
+elif len(list_tebakan) > 3 :
+    print('skor kamu 75')
+elif len(list_tebakan) >= 7 :
+    print('skor kamu 50')
+
+
+db_mahasiswa =  {}
+
+def tambah_mahasiswa(nim,nama,semester,gpa):
+        if nim in db_mahasiswa:
+            print('tidak bisa menambahkan nim yang sudah ada')
+        else:
+            db_mahasiswa[nim] = (nama,semester,gpa)
+        print(f'✓ {nim} - {nama} (Semester {semester}, GPA {gpa}) ditambahkan')
+def tampilkan_mahasiswa(nim,db):
+    nama , semester , gpa = db[nim]
+    return f'NIM: {nim} | Nama: {nama}  | Semester: {semester}  | GPA: {gpa}'
+    
+def update_gpa(nim,gpa_baru,db):
+     nama,semester , gpa = db[nim]
+     db[nim] = (nama,semester,gpa_baru)
+     print(f'nama {nama}  dengan gpa lama {gpa} berhasil di update menjadi {gpa_baru}')
+
+def hapus_data_gpa_min(nim,db):
+     del db[nim]
+
+def cari_mahasiswa_gpa_min(min_gpa,db):
+     for nim, data in db.items():
+        nama , semester , gpa = data
+        print(data)
+        print(f'nama {nama} memiliki gpa di atas {min_gpa} yaitu {gpa}')
+
+def statistik_gpa(db):
+    gpas = [data[2] for data in db.values()]
+    avg = sum(gpas) / len(gpas)
+    max_gpa = max(gpas)
+    min_gpa = min(gpas)
+
+    print(f"Rata-rata GPA: {avg}")
+    print(f"GPA Tertinggi: {max_gpa}")
+    print(f"GPA Terendah: {min_gpa}")
+
+print("=== DATABASE MAHASISWA === \n")
+
+print("Menambah mahasiswa...")
+tambah_mahasiswa("001", "Andi", 3, 3.75)
+tambah_mahasiswa("002", "Bella", 2, 3.50)
+tambah_mahasiswa("003", "Citra", 4, 3.90)
+tambah_mahasiswa("004", "Doni", 1, 3.25)
+tambah_mahasiswa("005", "Eka", 3, 3.80)
+
+print("\n=== DATA MAHASISWA ===")
+print(tampilkan_mahasiswa("001", db_mahasiswa))
+print(tampilkan_mahasiswa("002", db_mahasiswa))
+print(tampilkan_mahasiswa("003", db_mahasiswa))
+print(tampilkan_mahasiswa("004", db_mahasiswa))
+print(tampilkan_mahasiswa("005", db_mahasiswa))
+
+print("\n=== STATISTIK GPA ===")
+statistik_gpa(db_mahasiswa)
+
+print("\n=== MAHASISWA DENGAN GPA >= 3.70 ===")
+cari_mahasiswa_gpa_min(3.70, db_mahasiswa)
+
+print("\n=== UPDATE GPA ===")
+update_gpa("001", 3.80, db_mahasiswa)
+
+
+with open ('data_penjualan_csv', 'w') as file:
+    while True:
+        produk = input('masukan nama produk anda :')
+        harga = int(input('masukan harga produk anda :'))
+        jumlah = int(input('masukan jumlah produk :'))
+        total = harga * jumlah
+        file.write((f'{produk}, {harga}, {jumlah}, {total}\n'))
+        print(f'produk : {produk} berhasil di input')
+        lanjutan = input('ingin menambahkan produk lagi? (ya/no) :')
+        if lanjutan == 'no' :
+            break
+
+for i in range(1,6):
+    print(i ,end= '')
+    print('.',end=' ' )
+    for j in range(6):
+        print('[X]', '[ ]', end=' ')
+    print()
+
+
+
+harga = [50000, 75000, 75000, 100000, 100000]
+
+kursi = [
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "],
+    [" ", " ", " ", " ", " ", " ", " ", " "]
+]
+
+kolom = ["A", "B", "C", "D", "E", "F", "G", "H"]
+
+pesanan = []
+total = 0
+
+print("=== SISTEM PEMESANAN TIKET BIOSKOP ===")
+
+while True:
+    print("\nPETA KURSI (5 Baris x 8 Kolom):")
+    print("  ", end="")
+    for k in kolom:
+        print(f"{k:^3}", end=" ")
+    print()
+
+    for i in range(5):
+        print(i + 1, end=" ")
+        for j in range(8):
+            print(f"[{kursi[i][j]}]", end=" ")
+        print(f" Rp {harga[i]:,}".replace(",", "."))
+
+    print("\nPesan kursi (format: 1A, 2B, dll) atau 'selesai' untuk keluar")
+    pilih = input("Pilih kursi: ").upper()
+
+    if pilih == "SELESAI":
+        break
+
+    if len(pilih) < 2:
+        print("Input tidak valid!")
+        continue
+
+    baris = int(pilih[0]) - 1
+    kol = ord(pilih[1]) - ord("A")
+
+    if not (0 <= baris < 5 and 0 <= kol < 8):
+        print("Kursi tidak ada!")
+        continue
+
+    if kursi[baris][kol] == "X":
+        print("Kursi sudah terisi!")
+    else:
+        kursi[baris][kol] = "X"
+        pesanan.append(pilih)
+        total += harga[baris]
+        print(f"✓ {pilih} berhasil dipesan (Rp {harga[baris]:,})".replace(",", "."))
+
+print("\nRINGKASAN PEMESANAN:")
+print("Kursi yang dipesan:", ", ".join(pesanan))
+print(f"Total Harga: Rp {total:,}".replace(",", "."))
+
+lanjut = input("\nLanjutkan pemesanan? (y/n): ").lower()
+
+if lanjut == "n":
+    print("Terima kasih telah menggunakan sistem kami!")
+
+
+
+def bunga_majemuk(principal,rate,time, n=1):
+    r = rate / 100
+    A = principal * (1 + r/n)**(n*time)
+    bunga_total = A * principal
+    return A , bunga_total
+
+def validasi_input(principal,rate,time):
+    if principal <= 0 :
+        return False, 'modal awal tidak bisa 0'
+    if rate <= 0 :
+        return False, 'bunga awal tidak bisa 0'
+    if time <= 0 :
+        return False, 'jangka waktu harus lebih dari 0'
+    else:
+        return True , 'validasi input approved'
+    
+def generate_laporan(nama,principal,final_amount,bunga):
+    roi = (bunga / principal) * 100
     laporan = f"""
-  === {nama_investasi} ===
-  Modal Awal : Rp {principal:.2f}
-  Jumlah Akhir : Rp {final_amount:.2f}
-  keuntungan : Rp {bunga:.2f}
-  Roi        : Rp {(bunga / principal)* 100:.2f}"""
+=== {nama.upper()} ===
+Principal: Rp {principal:,.0f}
+Jumlah Akhir: Rp {final_amount:,.0f}
+Keuntungan Bunga: Rp {bunga:,.0f}
+ROI: {roi:.2f}%
+"""
     return laporan
 
+def banding_investasi(principal,rate,time):
+    hasil_dict = {}
+    max_amount = 0
+    terbaik = None
+
+    for p in principal:
+        akhir , bunga = bunga_majemuk(p,rate,time)
+        hasil_dict[p] = (akhir,bunga)
+        if akhir > max_amount:
+            max_amount = akhir
+            terbaik = p
+    return hasil_dict , terbaik
+
 def menu():
-    print('=== KALKULATOR INVESTASI ===')
-    principal =float(input('masukan jumlah investasi awal : Rp'))
-    rate = float(input('masukan suku bunga tahunan (&) : '))
-    time = float(input('masukan jangka waktu investasi (tahun) :'))
+    print(f'== SELAMAT DATANG DI INVESTASI ==')
+    nama = input('masukan nama anda :')
+    principal = float(input('masukan modal awal :'))
+    rate = float(input(' masukan jumlah suku bunga (%) :'))
+    time = float(input('masukan jangka waktu  investasi :'))
 
-    valid,pesan = validasi_input(principal,rate,time)
-
-    if not valid:
-        print(pesan)
+    is_validasi, error = validasi_input(principal,rate,time)
+    if not is_validasi:
+        print(is_validasi, error)
+        return
     else:
-        akhir, bunga = hitung_bunga_majemuk(principal,rate,time)
+        print(is_validasi, error)
+    
+    print('== ANALISI INVESTASI ==')
+    akhir , bunga = bunga_majemuk(principal,rate,time)
+    print(generate_laporan(nama,principal,akhir,bunga))
 
-        print('== ANALISI INVESTASI ANDA ==')
-        print(generate_laporan('investasi anda',principal, rate, time))
-        
-        pilihan = [10000000, 15000000, 20000000]
+    print('perbandingan investasi')
+    number_list =  [100_000_000, 150_000_000, 200_000_000]
+    hasil , terbaik = banding_investasi(number_list,rate,time)
+    for p, (bunga, akhir) in hasil.items():
+        print(generate_laporan(f'investasi Rp{p:,}',p,akhir,bunga))
 
-        hasil, terbaik = banding_investasi(pilihan, rate, time)
+    print(f'investasi terbaik adalah Rp {terbaik:,} dengan jumlah akhir Rp{hasil[terbaik][0]:,.0f}')
 
-        print('== PERBANDINGAN INVESTASI ==')
-        for modal, data in hasil.items():
-            print(generate_laporan(
-            f'modal Rp {modal:.2f}',
-            modal,
-            data['jumlah_akhir'],
-            data['bunga'],
-          ))
-            
-        print(f'investasi terbaik : Rp {terbaik :.2f}')
-menu()
+if __name__ == '__main__':
+    menu()
+
+
+    
